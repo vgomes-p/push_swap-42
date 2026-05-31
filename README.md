@@ -1,6 +1,6 @@
 This project has been created as part
 of the 42 curriculum by danda-si, vigomes-
-# Push_swap (because Swap_push doesn’t feel as natura)
+# Push_swap (because Swap_push doesn’t feel as natural)
 
 <!-- Description -->
 ## DESCRIPTION
