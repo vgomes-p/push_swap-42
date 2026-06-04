@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/04 14:44:42 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:04:14 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,17 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 	new_node->prev = last;
 }
 
+//Adiciona um novo nó no início da stack.
 void	ft_stack_add_front(t_stack **stack, t_stack *new_node)
 {
+	if (!stack || !new_node)
+		return ;
+	if (*stack == NULL)
+	{
+		*stack = new_node;
+		return ;
+	}
+	new_node->next = *stack;
+	(*stack)->prev = new_node;
+	*stack = new_node;
 }
