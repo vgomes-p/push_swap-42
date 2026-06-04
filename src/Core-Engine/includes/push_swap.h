@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/03 13:25:37 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/04 14:52:02 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int		has_duplicate(t_stack *stack, int value);
 void	print_error(void);
 
 /* Stack */
-t_stack	*stack_new(int value);
-void	stack_add_back(t_stack **stack, t_stack *new_node);
-void	stack_add_front(t_stack **stack, t_stack *new_node);
-t_stack	*stack_last(t_stack *stack);
-int		stack_size(t_stack *stack);
-void	free_stack(t_stack **stack);
-int		stack_is_sorted(t_stack *stack);
+t_stack	*ft_stack_new(int value);
+void	ft_stack_add_back(t_stack **stack, t_stack *new_node);
+void	ft_stack_add_front(t_stack **stack, t_stack *new_node);
+t_stack	*ft_stack_last(t_stack *stack);
+int		ft_stack_size(t_stack *stack);
+void	ft_free_stack(t_stack **stack);
+int		ft_stack_is_sorted(t_stack *stack);
 
 /* Operations */
 void	sa(t_data *data);
@@ -95,6 +95,6 @@ void	print_benchmark(t_data *data);
 
 /* Utils */
 long	ft_atol(char *str);
-void	free_all(t_data *data);
+void	ft_free_all(t_data *data);
 
 #endif

@@ -6,10 +6,10 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:05 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/03 13:04:28 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/04 14:33:24 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_is_sorted(t_stack *stack);
+int	ft_stack_is_sorted(t_stack *stack);
