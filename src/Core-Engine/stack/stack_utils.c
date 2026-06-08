@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/08 11:39:26 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:15:48 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,19 @@ int	ft_stack_size(t_stack *stack)
 		current = current->next;
 	}
 	return (count_stack);
+}
+
+//Libera a memória alocada para a pilha e define o ponteiro da pilha como NULL.
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack	*temp;
+
+	if (stack == NULL)
+		return ;
+	while (*stack != NULL)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
 }
