@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/08 15:57:44 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/08 16:41:56 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	init_data(t_data *data);
 int		parse_args(int argc, char **argv, t_data *data);
 int		is_valid_number(char *str);
 int		has_duplicate(t_stack *stack, int value);
+int		is_int_range(long value);
 void	print_error(void);
 
 /* Stack */
