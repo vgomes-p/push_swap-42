@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/04 16:04:14 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/08 10:28:26 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	*ft_stack_new(int value)
 	return (new_node);
 }
 
-//Adicionar um novo nó no final da stack.
+//Adiciona um novo nó no (FINAL) da stack.
 void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*last;
@@ -44,7 +44,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 	new_node->prev = last;
 }
 
-//Adiciona um novo nó no início da stack.
+//Adiciona um novo nó no (INICIO) da stack.
 void	ft_stack_add_front(t_stack **stack, t_stack *new_node)
 {
 	if (!stack || !new_node)

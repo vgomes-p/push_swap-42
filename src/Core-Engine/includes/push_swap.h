@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/04 14:52:02 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:13:48 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <unistd.h>
 # include <limits.h>
 
+//value: valor do nó da pilha
+//index:posição do valor na pilha ordenada(inicialmente -1,será preenchida dep)
+//next:ponteiro para o próximo nó da pilha
+//prev:ponteiro para o nó anterior da pilha(para facilitar operações de rotação)
 typedef struct s_stack
 {
 	int				value;
