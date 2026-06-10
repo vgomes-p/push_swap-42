@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/08 10:28:26 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/10 17:37:12 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 // Cria e inicializa um novo nó da pilha (retorna NULL se falhar).
 t_stack	*ft_stack_new(int value)

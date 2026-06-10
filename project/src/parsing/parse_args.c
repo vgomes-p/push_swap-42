@@ -1,15 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/08 16:41:09 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/08 16:41:21 by danda-si         ###   ########.fr       */
+/*   Created: 2026/06/08 16:39:49 by danda-si          #+#    #+#             */
+/*   Updated: 2026/06/10 17:37:46 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	print_error(void);
+int	parse_args(int argc, char **argv, t_data *data)
+{
+	return (0);
+}

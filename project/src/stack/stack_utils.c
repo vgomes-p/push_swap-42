@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/08 16:15:48 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/10 17:37:15 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 //Retorna o último nó da pilha (ou NULL se a pilha estiver vazia).
 t_stack	*ft_stack_last(t_stack *stack)
