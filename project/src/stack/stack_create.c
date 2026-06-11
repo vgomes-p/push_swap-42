@@ -6,14 +6,14 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/10 17:37:12 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/11 14:33:42 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "stack.h"
 
 // Cria e inicializa um novo nó da pilha (retorna NULL se falhar).
-t_stack	*ft_stack_new(int value)
+t_stack	*stack_new(int value)
 {
 	t_stack	*new_node;
 
@@ -28,7 +28,7 @@ t_stack	*ft_stack_new(int value)
 }
 
 //Adiciona um novo nó no (FINAL) da stack.
-void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
+void	stack_add_back(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*last;
 
@@ -45,7 +45,7 @@ void	ft_stack_add_back(t_stack **stack, t_stack *new_node)
 }
 
 //Adiciona um novo nó no (INICIO) da stack.
-void	ft_stack_add_front(t_stack **stack, t_stack *new_node)
+void	stack_add_front(t_stack **stack, t_stack *new_node)
 {
 	if (!stack || !new_node)
 		return ;

@@ -6,14 +6,14 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/10 17:37:15 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/11 14:33:50 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "stack.h"
 
 //Retorna o último nó da pilha (ou NULL se a pilha estiver vazia).
-t_stack	*ft_stack_last(t_stack *stack)
+t_stack	*stack_last(t_stack *stack)
 {
 	t_stack	*current;
 
@@ -28,7 +28,7 @@ t_stack	*ft_stack_last(t_stack *stack)
 }
 
 //Retorna o número de nós na pilha.
-int	ft_stack_size(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
 	t_stack	*current;
 	int		count_stack;
@@ -44,7 +44,7 @@ int	ft_stack_size(t_stack *stack)
 }
 
 //Libera a memória alocada para a pilha e define o ponteiro da pilha como NULL.
-void	ft_free_stack(t_stack **stack)
+void	free_stack(t_stack **stack)
 {
 	t_stack	*temp;
 
