@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validate_args.c                                    :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/08 16:40:44 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 17:07:50 by danda-si         ###   ########.fr       */
+/*   Created: 2026/06/11 17:22:02 by danda-si          #+#    #+#             */
+/*   Updated: 2026/06/11 17:23:25 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#ifndef PARSING_H
+# define PARSING_H
 
-int	is_valid_number(char *str)
-{
-	return (1);
-}
+# include "../../includes/push_swap.h"
 
-int	has_duplicate(t_stack *stack, int value)
-{
-	return (1);
-}
+int		is_valid_number(char *str);
+int		has_duplicate(t_stack *stack, int value);
+int		is_int_range(long value);
+int		parse_args(int argc, char **argv, t_data *data);
+void	print_error(void);
 
-int	is_int_range(long value)
-{
-	return (1);
-}
+#endif

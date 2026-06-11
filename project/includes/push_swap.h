@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 14:33:06 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:06:10 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 //index:posição do valor na pilha ordenada(inicialmente -1,será preenchida dep)
 //next:ponteiro para o próximo nó da pilha
 //prev:ponteiro para o nó anterior da pilha(para facilitar operações de rotação)
-
 
 typedef struct s_count
 {
