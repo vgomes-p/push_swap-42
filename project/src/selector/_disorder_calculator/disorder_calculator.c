@@ -6,14 +6,13 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:31:44 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/10 19:49:07 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/11 20:30:54 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "selector.h"
 
-
-double	calculate_local_disorder(t_stack *stack) // less efficient
+double	ds_local_calculator(t_stack *stack)
 {
 	double	disordered;
 	double	pair_nb;
@@ -39,19 +38,44 @@ double	calculate_local_disorder(t_stack *stack) // less efficient
 	return (disordered / pair_nb);
 }
 
-/*wip*/
-double	calculate_global_disorder(t_stack *stack) // more efficient
+static double	ds_traversal_invertions(t_stack *stack)
 {
-	double	disordered;
-	double	pair_nb;
+	double	inverted;
 	t_stack	*current;
-	t_stack	*next;
+	t_stack	*temp;
 
-	if (ft_stack_is_sorted(stack))
-		return (0);
+	inverted = 0;
 	current = stack;
-	next = stack->next;
-	disordered = 0;
-	pair_nb = 0;
-	return (disordered / pair_nb);
+	while (current)
+	{
+		temp = current->next;
+		if (!temp)
+			break;
+		while (temp)
+		{
+			if (current->value > temp->value)
+				inverted++;
+			temp = temp->next;
+		}
+		current = current->next;
+	}
+	return (inverted);
+}
+
+double	ds_global_calculator(t_stack *stack)
+{
+	double	inverted;
+	double	max_inverted;
+	int		stack_sz;
+	double	disorder;
+
+	if (!stack)
+		return (-1);
+	stack_sz = stack_size(stack);
+	if (stack_is_sorted(stack) || stack_sz == 1)
+		return (0);
+	inverted = ds_traversal_invertions(stack);
+	max_inverted = stack_sz * (stack_sz - 1) / 2;
+	disorder = inverted / max_inverted;
+	return (disorder);
 }

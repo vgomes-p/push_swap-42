@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   selector.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 14:37:00 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/11 20:31:15 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "selector.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "../src/stack/stack.h"
+int	selector(t_stack *stack)
+{
+	double	disordered;
 
-#endif
+	disordered = ds_calculator(stack);
+	return (0);
+}
