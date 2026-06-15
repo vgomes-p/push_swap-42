@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_puthexdec.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/15 16:45:45 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/05/26 15:32:49 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/05/27 17:54:28 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/selector/selector.h"
+/* hex base: 0123456789abcdef */
+int	ft_puthexdec(char *hex, unsigned long int nbr)
+{
+	unsigned long int	i;
+	unsigned long int	hexlen;
+	int					cnt;
 
-#endif
+	cnt = 0;
+	hexlen = ft_strlen(hex);
+	if (nbr >= hexlen)
+		cnt += ft_puthexdec(hex, nbr / hexlen);
+	i = nbr % hexlen;
+	cnt += ft_putchar(hex[i]);
+	return (cnt);
+}

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/15 16:45:45 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/05/22 10:07:10 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/01 14:34:01 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/selector/selector.h"
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*node;
+	t_list	*temp;
 
-#endif
+	if (!lst)
+		return ;
+	node = *lst;
+	while (node)
+	{
+		del(node->content);
+		temp = node->next;
+		free(node);
+		node = temp;
+	}
+	*lst = node;
+}
