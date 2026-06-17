@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/12 11:10:39 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/17 18:10:27 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "../src/stack/stack.h"
+# include "../src/parsing/parsing.h"
 
 typedef struct s_count
 {
