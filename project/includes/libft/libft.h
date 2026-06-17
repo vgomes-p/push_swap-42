@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -28,7 +29,17 @@ int		ft_putstr_nl(char *st);
 int		ft_puthexdec(char *hex, unsigned long int nbr);
 char	*ft_uitoa(unsigned int nb);
 int		ft_intlen(long int nb);
-int	ft_strcmp(const char *st1, const char *st2);
+int		ft_strcmp(const char *st1, const char *st2);
+
+int		ft_printf(const char *fstr, ...);
+int		validate_string(const char *fstr);
+int		handle_char(va_list *args);
+int		handle_string(va_list *args);
+int		handle_ptr(va_list *args);
+int		handle_lhex(va_list *args);
+int		handle_uhex(va_list *args);
+int		handle_int(va_list *args);
+int		handle_unsigned_int(va_list *args);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

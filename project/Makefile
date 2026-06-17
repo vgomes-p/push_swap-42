@@ -6,7 +6,7 @@
 #    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/05/31 10:44:35 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/06/17 14:19:33 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,11 @@ LIBFT		=	$(LIBFT_DIR)libft.a
 
 CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR)
 
-SRCS		=	
+TYPE_DIR	=	
+TYPE_SRCS	=	
+TYPE_OBJ	=	
+
+OBJ_DIR		=	
 OBJS		=	$(SRCS:.c=.o)
 
 # LIBFT_OBJ	=	$(wildcard $(LIBFT_DIR)*.o)

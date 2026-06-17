@@ -6,11 +6,11 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:31:44 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/11 20:30:54 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/17 14:16:40 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "selector.h"
+#include "../selector.h"
 
 double	ds_local_calculator(t_stack *stack)
 {

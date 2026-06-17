@@ -6,7 +6,7 @@
 #    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/13 10:54:55 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/15 17:18:40 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/06/17 14:21:42 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRCS		:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 			ft_lstmap.c ft_putstr.c ft_putchar.c ft_puthexdec.c ft_intlen.c \
-			ft_strcmp
+			ft_strcmp ft_printf_utils1.c ft_printf_utils2.c \
+			ft_printf_validations.c ft_printf.c
 
 OBJS := $(SRCS:.c=.o)
 
