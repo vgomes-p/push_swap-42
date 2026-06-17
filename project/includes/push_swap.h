@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 17:06:10 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:10:39 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 # include <unistd.h>
 # include <limits.h>
 # include "../src/stack/stack.h"
-
-//value: valor do nó da pilha
-//index:posição do valor na pilha ordenada(inicialmente -1,será preenchida dep)
-//next:ponteiro para o próximo nó da pilha
-//prev:ponteiro para o nó anterior da pilha(para facilitar operações de rotação)
 
 typedef struct s_count
 {
@@ -59,13 +54,6 @@ typedef struct s_data
 
 /* Init */
 void	init_data(t_data *data);
-
-/* Parsing */
-int		parse_args(int argc, char **argv, t_data *data);
-int		is_valid_number(char *str);
-int		has_duplicate(t_stack *stack, int value);
-int		is_int_range(long value);
-void	print_error(void);
 
 /* Operations */
 void	sa(t_data *data);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:41:09 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/10 17:37:48 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/17 11:31:48 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	print_error(void)
+void	parsing_print_error(void)
 {
-	return ;
+	write (2, "Error\n", 6);
 }

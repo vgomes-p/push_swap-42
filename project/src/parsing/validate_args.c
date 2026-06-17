@@ -6,23 +6,23 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:40:44 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 17:07:50 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/12 10:58:30 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	is_valid_number(char *str)
+int	parsing_is_valid_number(char *str)
 {
 	return (1);
 }
 
-int	has_duplicate(t_stack *stack, int value)
+int	parsing_has_duplicate(t_stack *stack, int value)
 {
 	return (1);
 }
 
-int	is_int_range(long value)
+int	parsing_is_int_range(long value)
 {
 	return (1);
 }

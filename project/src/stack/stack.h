@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:30:48 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/11 14:34:00 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/12 11:10:04 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include "../../includes/push_swap.h"
 
+//value: valor do nó da pilha
+//index:posição do valor na pilha ordenada(inicialmente -1,será preenchida dep)
+//next:ponteiro para o próximo nó da pilha
+//prev:ponteiro para o nó anterior da pilha(para facilitar operações de rotação)
 typedef struct s_stack
 {
 	int				value;

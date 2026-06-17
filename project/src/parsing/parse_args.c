@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:39:49 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/10 17:37:46 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/12 10:57:03 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-int	parse_args(int argc, char **argv, t_data *data)
+int	parsing_parse_args(int argc, char **argv, t_data *data)
 {
 	return (0);
 }

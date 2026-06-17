@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/05/31 10:44:35 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/06/12 11:05:28 by danda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ LIBFT		=	$(LIBFT_DIR)libft.a
 
 CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR)
 
-SRCS		=	
+SRCS		=	stack_check.c \
+				stack_create.c \
+				stack_utils.c \
+				
 OBJS		=	$(SRCS:.c=.o)
 
 # LIBFT_OBJ	=	$(wildcard $(LIBFT_DIR)*.o)
