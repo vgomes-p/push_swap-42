@@ -6,13 +6,13 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:39:49 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/12 10:57:03 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/17 15:23:12 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
+#include "parsing.h"
 
-int	parsing_parse_args(int argc, char **argv, t_data *data)
+int	parsing_parse_args(int argc, char **argv, t_stack **a, t_parser *parser)
 {
 	return (0);
 }
