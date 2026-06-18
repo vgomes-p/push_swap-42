@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:40:44 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/17 15:23:36 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/18 16:12:35 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,12 @@ int	parsing_has_duplicate(t_stack *stack, int value)
 	return (1);
 }
 
+// Verifica se um numero long cabe dentro de um int.
 int	parsing_is_int_range(long value)
 {
+	if (value < INT_MIN)
+		return (0);
+	if (value > INT_MAX)
+		return (0);
 	return (1);
 }
