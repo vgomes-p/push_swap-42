@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/15 16:45:45 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/05/14 14:57:50 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/17 14:23:00 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/selector/selector.h"
+int	handle_lhex(va_list *args)
+{
+	unsigned int	arg;
 
-#endif
+	arg = va_arg(*args, unsigned int);
+	return (ft_puthexdec("0123456789abcdef", arg));
+}
+
+int	handle_uhex(va_list *args)
+{
+	unsigned int	arg;
+
+	arg = va_arg(*args, unsigned int);
+	return (ft_puthexdec("0123456789ABCDEF", arg));
+}

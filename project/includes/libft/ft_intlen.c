@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/15 16:45:45 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/08 15:00:43 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/08 15:20:44 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/selector/selector.h"
+int	ft_intlen(long int nb)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (nb <= 0)
+	{
+		i++;
+		nb *= -1;
+	}
+	while (nb > 0)
+	{
+		i++;
+		nb /= 10;
+	}
+	return (i);
+}
