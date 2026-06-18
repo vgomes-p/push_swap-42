@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:40:44 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/18 16:12:35 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/18 16:37:33 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,19 @@ int	parsing_is_valid_number(char *str)
 	return (1);
 }
 
+//procura na stack se o valor ja existe.
 int	parsing_has_duplicate(t_stack *stack, int value)
 {
-	return (1);
+	t_stack	*current;
+
+	current = stack;
+	while (current != NULL)
+	{
+		if (current->value == value)
+			return (1);
+		current = current->next;
+	}
+	return (0);
 }
 
 // Verifica se um numero long cabe dentro de um int.
