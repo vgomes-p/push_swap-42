@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 14:33:42 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/20 16:39:52 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	stack_add_back(t_stack **stack, t_stack *new_node)
 		*stack = new_node;
 		return ;
 	}
-	last = ft_stack_last(*stack);
+	last = stack_last(*stack);
 	last->next = new_node;
 	new_node->prev = last;
 }

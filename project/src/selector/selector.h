@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:15:41 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/15 16:38:02 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/20 16:32:49 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ typedef struct	s_selector
 	char	*strategy;
 	int		id;
 }				t_selector;
+
+typedef struct	s_parser
+{
+	int		id;
+	int		bench;
+	char	*flag;
+}				t_parser;
+
 
 double	ds_local_calculator(t_stack *stack);
 double	ds_global_calculator(t_stack *stack);

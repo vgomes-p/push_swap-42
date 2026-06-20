@@ -6,32 +6,46 @@
 #    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/17 14:19:33 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/06/20 18:11:11 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
 CC			=	cc
 MAKEFLAGS	=	--silent
-AR			=	ar -rcs
 RM			=	rm -rf
 
-H_DIR		= includes/
+H_DIR		=	includes/
 LIBFT_DIR	=	includes/libft/
 LIBFT		=	$(LIBFT_DIR)libft.a
 
-CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR)
+MAIN_DIR	=	src/main/
+STACK_DIR	=	src/stack/
+SLC_DIR		=	src/selector/
+SLC_UDIR	=	$(SLC_DIR)_disorder_calculator/
 
-TYPE_DIR	=	
-TYPE_SRCS	=	
-TYPE_OBJ	=	
+MAIN_H		=	push_swap.h
+STACK_H		=	$(STACK_DIR)stack.h
+SLC_H		=	$(SLC_DIR)selector.h
+HEADERS		=	$(H_DIR)$(MAIN_H) $(STACK_H) $(SLC_H)
 
-OBJ_DIR		=	
-OBJS		=	$(SRCS:.c=.o)
+MAIN_SRC	=	main.c
+STACK_SRCS	=	stack_check.c stack_create.c stack_utils.c
+SLC_SRCS	=	selector.c
+SLC_UTILS	=	disorder_calculator.c
 
-# LIBFT_OBJ	=	$(wildcard $(LIBFT_DIR)*.o)
+ALL_SRCS	=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
+				$(addprefix $(STACK_DIR), $(STACK_SRCS)) \
+				$(addprefix $(SLC_DIR), $(SLC_SRCS)) \
+				$(addprefix $(SLC_UDIR), $(SLC_UTILS))
 
-ALL_FILES	=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(SRCS)
+CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
+				-I $(STACK_DIR) -I $(SLC_DIR)
+
+OBJ_DIR		=	build/
+OBJS		=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(STACK_SRCS:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o))
+
+ALL_FILES	=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
 PROGRAM		=	"PUSH SWAP"
 EXEC_NAME	=	"push_swap"
@@ -49,7 +63,7 @@ RERED		=	\033[1;7;31m
 REGREEN		=	\033[1;7;32m
 REYELLOW	=	\033[1;7;33m
 
-TOTAL_FILES = $(words $(OBJS) $(LIBFT_OBJ))
+TOTAL_FILES = $(words $(OBJS))
 COMPLETED = 0
 
 define update_progress
@@ -72,19 +86,22 @@ define update_progress
 		fi
 endef
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
+
+$(NAME): $(LIBFT) $(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+		@echo "$(PROGRAM) created as $(EXEC_NAME)"
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(LIBFT) $(OBJS)
-		cp $(LIBFT) $(NAME)
-		$(AR) $(NAME) $(OBJS)
-		@echo "$(PROGRAM) created as $(EXEC_NAME)"
+$(OBJ_DIR)%.o: %.c $(HEADERS)
+			@clear
+			@mkdir -p $(OBJ_DIR)
+			$(CC) $(CFLAGS) -c $< -o $@
+			@$(call update_progress)
 
-%.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
-		@$(call update_progress)
+vpath %.c $(MAIN_DIR) $(STACK_DIR) $(SLC_DIR) $(SLC_UDIR)
 
 norm:
 		@for file in $(ALL_FILES); do \
@@ -99,12 +116,12 @@ norm:
 		@echo "$(CYAN)Norminette report saved in norminette.log!$(DEFAULT)"
 
 clean:
-		$(RM) $(OBJS)
+		$(RM) $(OBJ_DIR)
 
 fclean: clean
 		$(RM) $(NAME)
 		$(RM) norminette.log
-		@make fclean -C $(LIBFT_DIR)
+		@$(MAKE) fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

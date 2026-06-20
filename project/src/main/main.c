@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 17:18:03 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/20 16:19:46 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/20 16:11:13 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/20 18:11:36 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/push_swap.h"
 
-int	ft_strcmp(const char *st1, const char *st2)
+int	main(void)
 {
-	size_t	i;
-
-	i = 0;
-	while (st1[i] && (st1[i] == st2[i]))
-		i++;
-	return ((unsigned char)st1[i] - (unsigned char)st2[i]);
+	return (ft_printf("hello, bitch!\n"));
 }

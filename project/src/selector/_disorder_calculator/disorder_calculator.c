@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:31:44 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/17 14:16:40 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/20 16:42:00 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ double	ds_local_calculator(t_stack *stack)
 	t_stack	*current;
 	t_stack	*next;
 
-	if (ft_stack_is_sorted(stack))
+	if (stack_is_sorted(stack))
 		return (0);
 	current = stack;
 	next = stack->next;
