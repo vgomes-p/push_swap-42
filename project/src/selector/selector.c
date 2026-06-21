@@ -6,11 +6,11 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/20 16:41:33 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:58:03 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "selector.h"
+#include "../../includes/push_swap.h"
 
 // static char	*slc_alloc(char *strategy)
 // {
@@ -27,7 +27,7 @@
 
 void	slc_filler(t_selector *slc, int id, double disorder)
 {
-	char *strategy;
+	char	*strategy;
 
 	strategy = NULL;
 	if (id == 0)

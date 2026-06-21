@@ -6,11 +6,12 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/20 16:39:52 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:29:13 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+// #include "stack.h"
+#include "../../includes/push_swap.h"
 
 // Cria e inicializa um novo nó da pilha (retorna NULL se falhar).
 t_stack	*stack_new(int value)

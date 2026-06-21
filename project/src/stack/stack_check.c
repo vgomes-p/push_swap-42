@@ -6,11 +6,12 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:05 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/11 14:33:34 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:29:07 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+// #include "stack.h"
+#include "../../includes/push_swap.h"
 
 //Verifica se a pilha está ordenada em ordem crescente
 //(retorna 1 se estiver ordenada, 0 caso contrário).
