@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/21 14:27:55 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/23 13:11:54 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <limits.h>
 # include "libft/libft.h"
 # include "../src/stack/stack.h"
+# include "../src/parsing/parsing.h"
 # include "../src/selector/selector.h"
 
 #endif
