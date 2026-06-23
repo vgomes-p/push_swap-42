@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 17:22:02 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/23 13:15:52 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:43:41 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ typedef struct s_parser
 	int		bench;
 }	t_parser;
 
-void	parsing_print_error(void);
-int		parsing_parse_args(int argc, char **argv,
-							t_stack **a, t_parser *parser);
-int		parsing_is_valid_number(char *str);
-int		parsing_has_duplicate(t_stack *stack, int value);
-int		parsing_is_int_range(long value);
-
+void		parsing_print_error(void);
+int			parsing_is_valid_number(char *str);
+int			parsing_has_duplicate(t_stack *stack, int value);
+int			parsing_is_int_range(long value);
+int			parsing_parse_args(int argc, char **argv,
+				t_stack **a, t_parser *parser);
 #endif

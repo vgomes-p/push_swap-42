@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selector.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:15:41 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/21 14:57:27 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/23 14:55:23 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@ typedef struct s_selector
 	char	*strategy;
 	int		id;
 }				t_selector;
-
-typedef struct s_parser
-{
-	int		id;
-	int		bench;
-	char	*flag;
-}				t_parser;
 
 double	ds_local_calculator(t_stack *stack);
 double	ds_global_calculator(t_stack *stack);

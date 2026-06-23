@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/20 18:11:11 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/06/23 14:03:47 by danda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,27 +23,31 @@ MAIN_DIR	=	src/main/
 STACK_DIR	=	src/stack/
 SLC_DIR		=	src/selector/
 SLC_UDIR	=	$(SLC_DIR)_disorder_calculator/
+PARSING_DIR	=	src/parsing/
 
 MAIN_H		=	push_swap.h
 STACK_H		=	$(STACK_DIR)stack.h
 SLC_H		=	$(SLC_DIR)selector.h
-HEADERS		=	$(H_DIR)$(MAIN_H) $(STACK_H) $(SLC_H)
+PARSING_H	=	$(PARSING_DIR)parsing.h
+HEADERS		=	$(H_DIR)$(MAIN_H) $(STACK_H) $(SLC_H) $(PARSING_H)
 
 MAIN_SRC	=	main.c
 STACK_SRCS	=	stack_check.c stack_create.c stack_utils.c
 SLC_SRCS	=	selector.c
 SLC_UTILS	=	disorder_calculator.c
+PARSING_SRCS	=	errors.c parse_args.c validate_args.c
 
 ALL_SRCS	=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
 				$(addprefix $(STACK_DIR), $(STACK_SRCS)) \
 				$(addprefix $(SLC_DIR), $(SLC_SRCS)) \
-				$(addprefix $(SLC_UDIR), $(SLC_UTILS))
+				$(addprefix $(SLC_UDIR), $(SLC_UTILS)) \
+				$(addprefix $(PARSING_DIR), $(PARSING_SRCS))
 
 CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
-				-I $(STACK_DIR) -I $(SLC_DIR)
+				-I $(STACK_DIR) -I $(SLC_DIR) -I $(PARSING_DIR)
 
 OBJ_DIR		=	build/
-OBJS		=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(STACK_SRCS:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o))
+OBJS		=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(STACK_SRCS:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o)) $(PARSING_SRCS:.c=.o)
 
 ALL_FILES	=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
@@ -101,7 +105,7 @@ $(OBJ_DIR)%.o: %.c $(HEADERS)
 			$(CC) $(CFLAGS) -c $< -o $@
 			@$(call update_progress)
 
-vpath %.c $(MAIN_DIR) $(STACK_DIR) $(SLC_DIR) $(SLC_UDIR)
+vpath %.c $(MAIN_DIR) $(STACK_DIR) $(SLC_DIR) $(SLC_UDIR) $(PARSING_DIR)
 
 norm:
 		@for file in $(ALL_FILES); do \
