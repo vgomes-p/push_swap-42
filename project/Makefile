@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
+#    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/23 14:03:47 by danda-si         ###   ########.fr        #
+#    Updated: 2026/06/23 17:10:27 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
 				-I $(STACK_DIR) -I $(SLC_DIR) -I $(PARSING_DIR)
 
 OBJ_DIR		=	build/
-OBJS		=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(STACK_SRCS:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o)) $(PARSING_SRCS:.c=.o)
+OBJS		=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(STACK_SRCS:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(PARSING_SRCS:.c=.o))
 
 ALL_FILES	=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
