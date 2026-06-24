@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:15:32 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/24 16:24:03 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/24 16:36:56 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ void	op_sa(t_stack **a)
 
 void	op_sb(t_stack **b)
 {
+	(void)b;
 }
 
 void	op_ss(t_stack **a, t_stack **b)
 {
+	(void)a;
+	(void)b;
 }
