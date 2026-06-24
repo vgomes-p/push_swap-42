@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/24 18:32:41 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/24 17:04:37 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/24 18:31:33 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "index.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/parsing/parsing.h"
-# include "../src/selector/selector.h"
-# include "../src/index/index.h"
+void	index_set(t_stack *stack)
+{
+	int		index;
+	int		current;
+	t_stack	*temp;
 
-#endif
+	while (stack)
+	{
+		current = stack->value;
+		temp = stack;
+		index = 0;
+		while (temp)
+		{
+			if (current > temp->value)
+				index++;
+			temp = temp->next;
+		}
+		stack->index = index;
+		stack = stack->next;
+	}
+}
