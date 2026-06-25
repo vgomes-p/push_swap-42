@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:15:32 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/25 14:27:27 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/25 14:31:44 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	void	op_swap(t_stack **stack)
 	first->next = second->next;
 	second->next = first;
 	if (first != NULL)
-	first->next->prev = first;
+		first->next->prev = first;
 	first->prev = second;
 	second->prev = NULL;
 	*stack = second;
