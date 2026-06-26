@@ -6,14 +6,14 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:15:32 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/25 14:31:44 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/26 17:47:06 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
 //Trocar os dois primeiros nós da stack A.
-static	void	op_swap(t_stack **stack)
+static void	op_swap(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -24,7 +24,7 @@ static	void	op_swap(t_stack **stack)
 	second = first->next;
 	first->next = second->next;
 	second->next = first;
-	if (first != NULL)
+	if (first->next != NULL)
 		first->next->prev = first;
 	first->prev = second;
 	second->prev = NULL;
