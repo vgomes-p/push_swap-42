@@ -21,5 +21,6 @@
 # include "../src/parsing/parsing.h"
 # include "../src/selector/selector.h"
 # include "../src/operations/operations.h"
+# include "../src/index/index.h"
 
 #endif
