@@ -6,51 +6,86 @@
 #    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/17 14:19:33 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/06/28 15:04:55 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	push_swap
-CC			=	cc
-MAKEFLAGS	=	--silent
-AR			=	ar -rcs
-RM			=	rm -rf
+NAME			=	push_swap
+CC				=	cc
+MAKEFLAGS		=	--silent
+RM				=	rm -rf
 
-H_DIR		= includes/
-LIBFT_DIR	=	includes/libft/
-LIBFT		=	$(LIBFT_DIR)libft.a
+H_DIR			=	includes/
+LIBFT_DIR		=	includes/libft/
+LIBFT			=	$(LIBFT_DIR)libft.a
 
-CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR)
+MAIN_DIR		=	src/main/
+PARSING_DIR		=	src/parsing/
+STACK_DIR		=	src/stack/
+INDEX_DIR		=	src/index/
+RN_DIR			=	src/runner/
+SLC_DIR			=	src/selector/
+SLC_UDIR		=	$(SLC_DIR)_disorder_calculator/
+OPS_DIR			=	src/operations/
+ALG_DIR			=	src/algorithms/
 
-TYPE_DIR	=	
-TYPE_SRCS	=	
-TYPE_OBJ	=	
+MAIN_H			=	push_swap.h
+PARSING_H		=	$(PARSING_DIR)parsing.h
+STACK_H			=	$(STACK_DIR)stack.h
+INDEX_H			=	$(INDEX_DIR)index.h
+RN_H			=	$(RN_DIR)runner.h
+SLC_H			=	$(SLC_DIR)selector.h
+OPS_H			=	$(OPS_DIR)operations.h
+ALG_H			=	$(ALG_DIR)algorithms.h
+HEADERS			=	$(H_DIR)$(MAIN_H) $(PARSING_H) $(STACK_H) $(RN_H) $(SLC_H) $(INDEX_H) $(OPS_H) $(ALG_H)
 
-OBJ_DIR		=	
-OBJS		=	$(SRCS:.c=.o)
+MAIN_SRC		=	main.c
+PARSING_SRCS	=	errors.c parse_args.c validate_args.c
+STACK_SRCS		=	stack_check.c stack_create.c stack_utils.c
+INDEX_SRC		=	index.c
+RN_SRC			=	runner.c
+SLC_SRCS		=	selector.c
+SLC_UTILS		=	disorder_calculator.c
+OPS_SRCS		=	swap.c push.c rotate.c reverse_rotate.c
+ALG_SRCS		=	n_squared.c n_root.c n_log.c
 
-# LIBFT_OBJ	=	$(wildcard $(LIBFT_DIR)*.o)
+ALL_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
+					$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
+					$(addprefix $(STACK_DIR), $(STACK_SRCS)) \
+					$(addprefix $(INDEX_DIR), $(INDEX_SRC)) \
+					$(addprefix $(RN_DIR), $(RN_SRC)) \
+					$(addprefix $(SLC_DIR), $(SLC_SRCS)) \
+					$(addprefix $(SLC_UDIR), $(SLC_UTILS)) \
+					$(addprefix $(OPS_DIR), $(OPS_SRCS)) \
+					$(addprefix $(ALG_DIR), $(ALG_SRCS))
 
-ALL_FILES	=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(SRCS)
+CFLAGS			=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
+					-I $(PARSING_DIR) -I $(STACK_DIR) -I $(INDEX_DIR) \
+					-I $(RN_DIR) -I $(SLC_DIR) -I $(OPS_DIR) -I $(ALG_DIR)
 
-PROGRAM		=	"PUSH SWAP"
-EXEC_NAME	=	"push_swap"
+OBJ_DIR			=	build/
+OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o))
 
-DEFAULT		=	\033[0m
-RED			=	\033[1;31m
-CYAN		=	\033[1;36m
-PINK		=	\033[1;35m
-GREEN		=	\033[1;32m
-YELLOW		=	\033[1;33m
-REWHITE		=	\033[1;7;97m
-RECYAN		=	\033[1;7;36m
-REPINK		=	\033[1;7;35m
-RERED		=	\033[1;7;31m
-REGREEN		=	\033[1;7;32m
-REYELLOW	=	\033[1;7;33m
+ALL_FILES		=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
-TOTAL_FILES = $(words $(OBJS) $(LIBFT_OBJ))
-COMPLETED = 0
+PROGRAM			=	"PUSH SWAP"
+EXEC_NAME		=	"push_swap"
+
+DEFAULT			=	\033[0m
+RED				=	\033[1;31m
+CYAN			=	\033[1;36m
+PINK			=	\033[1;35m
+GREEN			=	\033[1;32m
+YELLOW			=	\033[1;33m
+REWHITE			=	\033[1;7;97m
+RECYAN			=	\033[1;7;36m
+REPINK			=	\033[1;7;35m
+RERED			=	\033[1;7;31m
+REGREEN			=	\033[1;7;32m
+REYELLOW		=	\033[1;7;33m
+
+TOTAL_FILES		=	$(words $(OBJS))
+COMPLETED		=	0
 
 define update_progress
 		@if [ "$(COMPLETED)" -eq "0" ]; then \
@@ -72,19 +107,22 @@ define update_progress
 		fi
 endef
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
+
+$(NAME): $(LIBFT) $(OBJS)
+		$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+		@echo "$(PROGRAM) created as $(EXEC_NAME)"
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
 
-$(NAME): $(LIBFT) $(OBJS)
-		cp $(LIBFT) $(NAME)
-		$(AR) $(NAME) $(OBJS)
-		@echo "$(PROGRAM) created as $(EXEC_NAME)"
+$(OBJ_DIR)%.o: %.c $(HEADERS)
+			@clear
+			@mkdir -p $(OBJ_DIR)
+			$(CC) $(CFLAGS) -c $< -o $@
+			@$(call update_progress)
 
-%.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
-		@$(call update_progress)
+vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR)
 
 norm:
 		@for file in $(ALL_FILES); do \
@@ -99,12 +137,12 @@ norm:
 		@echo "$(CYAN)Norminette report saved in norminette.log!$(DEFAULT)"
 
 clean:
-		$(RM) $(OBJS)
+		$(RM) $(OBJ_DIR)
 
 fclean: clean
 		$(RM) $(NAME)
 		$(RM) norminette.log
-		@make fclean -C $(LIBFT_DIR)
+		@$(MAKE) fclean -C $(LIBFT_DIR)
 
 re: fclean all
 

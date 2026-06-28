@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 15:02:03 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/24 17:04:37 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/28 12:33:05 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "index.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/parsing/parsing.h"
-# include "../src/index/index.h"
-# include "../src/runner/runner.h"
-# include "../src/selector/selector.h"
-# include "../src/operations/operations.h"
-# include "../src/algorithms/algorithms.h"
+void	index_set(t_stack *stack)
+{
+	int		index;
+	int		current;
+	t_stack	*temp;
+	t_stack	*init;
 
-#endif
+	init = stack;
+	while (stack)
+	{
+		current = stack->value;
+		temp = init;
+		index = 0;
+		while (temp)
+		{
+			if (current > temp->value)
+				index++;
+			temp = temp->next;
+		}
+		stack->index = index;
+		stack = stack->next;
+	}
+}

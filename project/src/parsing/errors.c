@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 17:18:03 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/20 16:19:46 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/08 16:41:09 by danda-si          #+#    #+#             */
+/*   Updated: 2026/06/17 15:23:25 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "parsing.h"
 
-int	ft_strcmp(const char *st1, const char *st2)
+//imprimir "Error\n" para stderr
+void	parsing_print_error(void)
 {
-	size_t	i;
-
-	i = 0;
-	while (st1[i] && (st1[i] == st2[i]))
-		i++;
-	return ((unsigned char)st1[i] - (unsigned char)st2[i]);
+	write (2, "Error\n", 6);
 }

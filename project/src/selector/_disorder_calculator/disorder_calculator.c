@@ -6,11 +6,11 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 18:31:44 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/17 14:16:40 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/21 14:56:36 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../selector.h"
+#include "../../../includes/push_swap.h"
 
 double	ds_local_calculator(t_stack *stack)
 {
@@ -19,7 +19,7 @@ double	ds_local_calculator(t_stack *stack)
 	t_stack	*current;
 	t_stack	*next;
 
-	if (ft_stack_is_sorted(stack))
+	if (stack_is_sorted(stack))
 		return (0);
 	current = stack;
 	next = stack->next;
@@ -50,7 +50,7 @@ static double	ds_traversal_invertions(t_stack *stack)
 	{
 		temp = current->next;
 		if (!temp)
-			break;
+			break ;
 		while (temp)
 		{
 			if (current->value > temp->value)

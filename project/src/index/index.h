@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   index.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 15:02:03 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/24 17:03:48 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/28 12:05:18 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef INDEX_H
+# define INDEX_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/parsing/parsing.h"
-# include "../src/index/index.h"
-# include "../src/runner/runner.h"
-# include "../src/selector/selector.h"
-# include "../src/operations/operations.h"
-# include "../src/algorithms/algorithms.h"
+# include "../stack/stack.h"
+
+typedef struct s_stack t_stack;
+
+void	index_set(t_stack *stack);
 
 #endif
