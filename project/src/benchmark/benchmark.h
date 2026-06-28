@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   benchmark.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 16:23:35 by danda-si         ###   ########.fr       */
+/*   Created: 2026/06/27 18:06:37 by danda-si          #+#    #+#             */
+/*   Updated: 2026/06/28 16:15:08 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef BENCHMARK_H
+# define BENCHMARK_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
-# include "libft/libft.h"
-# include "../src/stack/stack.h"
-# include "../src/parsing/parsing.h"
-# include "../src/selector/selector.h"
-# include "../src/operations/operations.h"
-# include "../src/index/index.h"
-# include "../src/benchmark/benchmark.h"
+# include "../../includes/push_swap.h"
 
+typedef struct s_count
+{
+	int	sa;
+	int	sb;
+	int	ss;
+	int	pa;
+	int	pb;
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	total;
+}	t_count;
+
+void	benchmark_init(t_count *count);
+void	benchmark_count(t_count *count, char *operation);
+void	benchmark_print(t_selector *slc, t_count *count, double disorder);
 #endif
