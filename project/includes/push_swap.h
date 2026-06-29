@@ -23,6 +23,8 @@
 # include "../src/runner/runner.h"
 # include "../src/selector/selector.h"
 # include "../src/operations/operations.h"
+# include "../src/index/index.h"
+# include "../src/benchmark/benchmark.h"
 # include "../src/algorithms/algorithms.h"
 
 #endif
