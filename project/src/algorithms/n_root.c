@@ -6,13 +6,13 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 15:17:20 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/29 18:11:51 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/29 19:05:04 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithms.h"
 
-int	alg_n_root(t_stack *a, t_stack *b, int bench)
+int	alg_n_root(t_stack **a, t_stack **b, int bench)
 {
 	int	ops;
 
