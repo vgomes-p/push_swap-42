@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 16:11:13 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/28 14:36:02 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/28 14:49:17 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,20 @@
 int	main(int ac, char **av)
 {
 	// double		disorder;
-	t_stack		*stack;
+	t_stack		*a;
 	t_selector	*slc;
 	t_parser	parser;
 
-	stack = NULL;
+	a = NULL;
 	if (ac < 2)
 		return (0);
-	if (!parsing_parse_args(ac, av, &stack, &parser))
+	if (!parsing_parse_args(ac, av, &a, &parser))
 		return (1);
 	slc = malloc(sizeof(t_selector));
 	if (!slc)
-		return (free_stack(&stack), 1);
-	slc = selector(stack, &parser);
+		return (free_stack(&a), 1);
+	index_set(a);
+	slc = selector(a, &parser);
 	ft_printf("flag: %s\n", parser.flag);
 	ft_printf("bench: %d\n", parser.bench);
 	int	d = 100 * slc->disorder;
@@ -35,7 +36,7 @@ int	main(int ac, char **av)
 	ft_printf("Strategy: %s\n", slc->strategy);
 	ft_printf("id: %i\n", slc->id);
 	ft_printf("number of operations: %i\n", slc->n_ops);
-	free_stack(&stack);
+	free_stack(&a);
 	free(slc);
 	return (0);
 }

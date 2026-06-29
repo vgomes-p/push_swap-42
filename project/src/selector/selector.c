@@ -74,6 +74,6 @@ t_selector	*selector(t_stack *stack, t_parser	*parser)
 		slc_filler(slc, 2, disorder);
 	else if (ft_strcmp(parser->flag, "--adaptive") == 0)
 		slc_adaptive(slc, disorder);
-	slc->n_ops = runner(slc->id, parser->bench, stack);
+	slc->n_ops = runner(slc, stack);
 	return (slc);
 }

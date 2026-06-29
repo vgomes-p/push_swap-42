@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 12:06:36 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/28 15:02:03 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@
 # include "../src/stack/stack.h"
 # include "../src/parsing/parsing.h"
 # include "../src/index/index.h"
+# include "../src/runner/runner.h"
 # include "../src/selector/selector.h"
 # include "../src/operations/operations.h"
+# include "../src/index/index.h"
+# include "../src/benchmark/benchmark.h"
 # include "../src/algorithms/algorithms.h"
 
 #endif
