@@ -6,7 +6,7 @@
 #    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/28 16:27:45 by danda-si         ###   ########.fr        #
+#    Updated: 2026/06/29 10:15:54 by danda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ SLC_SRCS	=	selector.c
 SLC_UTILS	=	disorder_calculator.c
 PARSING_SRCS	=	errors.c parse_args.c validate_args.c
 OPS_SRCS	=	swap.c push.c rotate.c reverse_rotate.c
-BENCHMARK_SRCS	=	benchmark.c
+BENCHMARK_SRCS = benchmark.c benchmark_count.c benchmark_print.c
 
 ALL_SRCS	=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
 				$(addprefix $(STACK_DIR), $(STACK_SRCS)) \

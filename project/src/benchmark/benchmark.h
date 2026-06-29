@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 18:06:37 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 16:15:08 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/29 10:06:44 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,5 @@ typedef struct s_count
 void	benchmark_init(t_count *count);
 void	benchmark_count(t_count *count, char *operation);
 void	benchmark_print(t_selector *slc, t_count *count, double disorder);
+
 #endif
