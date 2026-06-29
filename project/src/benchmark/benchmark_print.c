@@ -6,12 +6,13 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/29 10:31:54 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/29 10:43:12 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/29 17:54:12 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "benchmark.h"
 
+//write a percentage value to stderr with two decimal places
 static void	benchmark_print_percent(double disorder)
 {
 	int	value;
@@ -29,6 +30,7 @@ static void	benchmark_print_percent(double disorder)
 	ft_putstr_fd("%\n", 2);
 }
 
+//print the benchmark header information to stderr
 static void	benchmark_print_header(t_selector *slc, t_count *count)
 {
 	ft_putstr_fd("========== BENCHMARK ==========\n", 2);
@@ -42,6 +44,7 @@ static void	benchmark_print_header(t_selector *slc, t_count *count)
 	ft_putstr_fd("\n\n", 2);
 }
 
+//print the count of each operation to stderr
 static void	benchmark_print_operations(t_count *count)
 {
 	ft_putstr_fd("sa  : ", 2);
@@ -69,6 +72,7 @@ static void	benchmark_print_operations(t_count *count)
 	ft_putchar_fd('\n', 2);
 }
 
+//print the benchmark results to stderr
 void	benchmark_print(t_selector *slc, t_count *count, double disorder)
 {
 	(void)disorder;
