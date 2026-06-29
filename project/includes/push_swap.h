@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 15:41:24 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 16:23:35 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/28 15:02:03 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@
 # include "libft/libft.h"
 # include "../src/stack/stack.h"
 # include "../src/parsing/parsing.h"
+# include "../src/index/index.h"
+# include "../src/runner/runner.h"
 # include "../src/selector/selector.h"
 # include "../src/operations/operations.h"
 # include "../src/index/index.h"
 # include "../src/benchmark/benchmark.h"
+# include "../src/algorithms/algorithms.h"
 
 #endif

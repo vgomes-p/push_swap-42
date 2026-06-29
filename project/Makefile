@@ -3,80 +3,89 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
+#    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/06/29 10:15:54 by danda-si         ###   ########.fr        #
+#    Updated: 2026/06/28 15:04:55 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	push_swap
-CC			=	cc
-MAKEFLAGS	=	--silent
-RM			=	rm -rf
+NAME			=	push_swap
+CC				=	cc
+MAKEFLAGS		=	--silent
+RM				=	rm -rf
 
-H_DIR		=	includes/
-LIBFT_DIR	=	includes/libft/
-LIBFT		=	$(LIBFT_DIR)libft.a
+H_DIR			=	includes/
+LIBFT_DIR		=	includes/libft/
+LIBFT			=	$(LIBFT_DIR)libft.a
 
-MAIN_DIR	=	src/main/
-STACK_DIR	=	src/stack/
-SLC_DIR		=	src/selector/
-SLC_UDIR	=	$(SLC_DIR)_disorder_calculator/
-PARSING_DIR	=	src/parsing/
-OPS_DIR		=	src/operations/
-BENCHMARK_DIR	=	src/benchmark/
+MAIN_DIR		=	src/main/
+PARSING_DIR		=	src/parsing/
+STACK_DIR		=	src/stack/
+INDEX_DIR		=	src/index/
+RN_DIR			=	src/runner/
+SLC_DIR			=	src/selector/
+SLC_UDIR		=	$(SLC_DIR)_disorder_calculator/
+OPS_DIR			=	src/operations/
+ALG_DIR			=	src/algorithms/
 
-MAIN_H		=	push_swap.h
-STACK_H		=	$(STACK_DIR)stack.h
-SLC_H		=	$(SLC_DIR)selector.h
-PARSING_H	=	$(PARSING_DIR)parsing.h
-OPS_H		=	$(OPS_DIR)operations.h
-BENCHMARK_H	=	$(BENCHMARK_DIR)benchmark.h
-HEADERS		=	$(H_DIR)$(MAIN_H) $(STACK_H) $(SLC_H) $(PARSING_H) $(OPS_H) $(BENCHMARK_H)
+MAIN_H			=	push_swap.h
+PARSING_H		=	$(PARSING_DIR)parsing.h
+STACK_H			=	$(STACK_DIR)stack.h
+INDEX_H			=	$(INDEX_DIR)index.h
+RN_H			=	$(RN_DIR)runner.h
+SLC_H			=	$(SLC_DIR)selector.h
+OPS_H			=	$(OPS_DIR)operations.h
+ALG_H			=	$(ALG_DIR)algorithms.h
+HEADERS			=	$(H_DIR)$(MAIN_H) $(PARSING_H) $(STACK_H) $(RN_H) $(SLC_H) $(INDEX_H) $(OPS_H) $(ALG_H)
 
-MAIN_SRC	=	main.c
-STACK_SRCS	=	stack_check.c stack_create.c stack_utils.c
-SLC_SRCS	=	selector.c
-SLC_UTILS	=	disorder_calculator.c
+MAIN_SRC		=	main.c
 PARSING_SRCS	=	errors.c parse_args.c validate_args.c
-OPS_SRCS	=	swap.c push.c rotate.c reverse_rotate.c
-BENCHMARK_SRCS = benchmark.c benchmark_count.c benchmark_print.c
+STACK_SRCS		=	stack_check.c stack_create.c stack_utils.c
+INDEX_SRC		=	index.c
+RN_SRC			=	runner.c
+SLC_SRCS		=	selector.c
+SLC_UTILS		=	disorder_calculator.c
+OPS_SRCS		=	swap.c push.c rotate.c reverse_rotate.c
+ALG_SRCS		=	n_squared.c n_root.c n_log.c
 
-ALL_SRCS	=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
-				$(addprefix $(STACK_DIR), $(STACK_SRCS)) \
-				$(addprefix $(SLC_DIR), $(SLC_SRCS)) \
-				$(addprefix $(SLC_UDIR), $(SLC_UTILS)) \
-				$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
-				$(addprefix $(OPS_DIR), $(OPS_SRCS)) \
-				$(addprefix $(BENCHMARK_DIR), $(BENCHMARK_SRCS))
+ALL_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
+					$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
+					$(addprefix $(STACK_DIR), $(STACK_SRCS)) \
+					$(addprefix $(INDEX_DIR), $(INDEX_SRC)) \
+					$(addprefix $(RN_DIR), $(RN_SRC)) \
+					$(addprefix $(SLC_DIR), $(SLC_SRCS)) \
+					$(addprefix $(SLC_UDIR), $(SLC_UTILS)) \
+					$(addprefix $(OPS_DIR), $(OPS_SRCS)) \
+					$(addprefix $(ALG_DIR), $(ALG_SRCS))
 
-CFLAGS		=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
-				-I $(STACK_DIR) -I $(SLC_DIR) -I $(PARSING_DIR) -I $(OPS_DIR) -I $(BENCHMARK_DIR)
+CFLAGS			=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
+					-I $(PARSING_DIR) -I $(STACK_DIR) -I $(INDEX_DIR) \
+					-I $(RN_DIR) -I $(SLC_DIR) -I $(OPS_DIR) -I $(ALG_DIR)
 
-OBJ_DIR		=	build/
-OBJS		=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(STACK_SRCS:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(PARSING_SRCS:.c=.o) $(OPS_SRCS:.c=.o) $(BENCHMARK_SRCS:.c=.o))
+OBJ_DIR			=	build/
+OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o))
 
-ALL_FILES	=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
+ALL_FILES		=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
-PROGRAM		=	"PUSH SWAP"
-EXEC_NAME	=	"push_swap"
+PROGRAM			=	"PUSH SWAP"
+EXEC_NAME		=	"push_swap"
 
-DEFAULT		=	\033[0m
-RED			=	\033[1;31m
-CYAN		=	\033[1;36m
-PINK		=	\033[1;35m
-GREEN		=	\033[1;32m
-YELLOW		=	\033[1;33m
-REWHITE		=	\033[1;7;97m
-RECYAN		=	\033[1;7;36m
-REPINK		=	\033[1;7;35m
-RERED		=	\033[1;7;31m
-REGREEN		=	\033[1;7;32m
-REYELLOW	=	\033[1;7;33m
+DEFAULT			=	\033[0m
+RED				=	\033[1;31m
+CYAN			=	\033[1;36m
+PINK			=	\033[1;35m
+GREEN			=	\033[1;32m
+YELLOW			=	\033[1;33m
+REWHITE			=	\033[1;7;97m
+RECYAN			=	\033[1;7;36m
+REPINK			=	\033[1;7;35m
+RERED			=	\033[1;7;31m
+REGREEN			=	\033[1;7;32m
+REYELLOW		=	\033[1;7;33m
 
-TOTAL_FILES = $(words $(OBJS))
-COMPLETED = 0
+TOTAL_FILES		=	$(words $(OBJS))
+COMPLETED		=	0
 
 define update_progress
 		@if [ "$(COMPLETED)" -eq "0" ]; then \
@@ -113,7 +122,7 @@ $(OBJ_DIR)%.o: %.c $(HEADERS)
 			$(CC) $(CFLAGS) -c $< -o $@
 			@$(call update_progress)
 
-vpath %.c $(MAIN_DIR) $(STACK_DIR) $(SLC_DIR) $(SLC_UDIR) $(PARSING_DIR) $(OPS_DIR) $(BENCHMARK_DIR)
+vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR)
 
 norm:
 		@for file in $(ALL_FILES); do \

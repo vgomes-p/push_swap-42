@@ -6,24 +6,11 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/21 14:58:03 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/28 14:51:08 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-// static char	*slc_alloc(char *strategy)
-// {
-// 	char	*str;
-// 	size_t	len;
-
-// 	len = (ft_strlen(strategy) + 1);
-// 	str = malloc(sizeof(char) * len);
-// 	if (!str)
-// 		return (NULL);
-// 	ft_strlcpy(str, strategy, len);
-// 	return (str);
-// }
 
 void	slc_filler(t_selector *slc, int id, double disorder)
 {
@@ -53,14 +40,7 @@ void	slc_adaptive(t_selector *slc, double disorder)
 		slc_filler(slc, 2, disorder);
 }
 
-void	runner(int id, int bench)
-{
-	(void)id;
-	(void)bench;
-	return ;
-}
-
-int	selector(t_stack *stack, t_parser	*parser)
+t_selector	*selector(t_stack *stack, t_parser	*parser)
 {
 	t_selector	*slc;
 	double		disorder;
@@ -68,7 +48,7 @@ int	selector(t_stack *stack, t_parser	*parser)
 	disorder = ds_global_calculator(stack);
 	slc = malloc(sizeof(t_selector));
 	if (!slc)
-		return (1);
+		return (NULL);
 	if (ft_strcmp(parser->flag, "--simple") == 0)
 		slc_filler(slc, 0, disorder);
 	else if (ft_strcmp(parser->flag, "--medium") == 0)
@@ -77,7 +57,6 @@ int	selector(t_stack *stack, t_parser	*parser)
 		slc_filler(slc, 2, disorder);
 	else if (ft_strcmp(parser->flag, "--adaptive") == 0)
 		slc_adaptive(slc, disorder);
-	runner(slc->id, parser->bench);
-	free(slc);
-	return (0);
+	slc->n_ops = runner(slc, stack);
+	return (slc);
 }

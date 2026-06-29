@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:09:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/23 18:09:44 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/06/28 11:58:53 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-# include "../../includes/push_swap.h"
+# include "../stack/stack.h"
+
+typedef struct s_stack t_stack;
 
 void	op_sa(t_stack **a);
 void	op_sb(t_stack **b);

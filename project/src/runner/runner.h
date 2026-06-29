@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   runner.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 17:04:37 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/28 12:33:05 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/28 14:45:43 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/28 15:01:43 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "index.h"
+#ifndef RUNNER_H
+# define RUNNER_H
 
-void	index_set(t_stack *stack)
-{
-	int		index;
-	int		current;
-	t_stack	*temp;
-	t_stack	*init;
+# include "../stack/stack.h"
+# include "../selector/selector.h"
 
-	init = stack;
-	while (stack)
-	{
-		current = stack->value;
-		temp = init;
-		index = 0;
-		while (temp)
-		{
-			if (current > temp->value)
-				index++;
-			temp = temp->next;
-		}
-		stack->index = index;
-		stack = stack->next;
-	}
-}
+typedef struct s_stack t_stack;
+typedef struct s_selector t_selector;
+
+int	runner(t_selector *slc, t_stack *a, t_stack *b);
+
+#endif

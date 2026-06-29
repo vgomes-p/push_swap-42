@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index.c                                            :+:      :+:    :+:   */
+/*   algorithms.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 17:04:37 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/28 12:33:05 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/06/24 18:55:55 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/06/28 11:25:49 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "index.h"
+#ifndef ALGORITHMS_H
+# define ALGORITHMS_H
 
-void	index_set(t_stack *stack)
-{
-	int		index;
-	int		current;
-	t_stack	*temp;
-	t_stack	*init;
+# include "../../includes/push_swap.h"
 
-	init = stack;
-	while (stack)
-	{
-		current = stack->value;
-		temp = init;
-		index = 0;
-		while (temp)
-		{
-			if (current > temp->value)
-				index++;
-			temp = temp->next;
-		}
-		stack->index = index;
-		stack = stack->next;
-	}
-}
+int	alg_n_squared(t_stack **a, t_stack **b);
+
+#endif
