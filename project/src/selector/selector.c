@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/28 14:51:08 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/29 18:15:16 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,23 @@ void	slc_adaptive(t_selector *slc, double disorder)
 		slc_filler(slc, 1, disorder);
 	else if (disorder >= 0.5)
 		slc_filler(slc, 2, disorder);
+}
+
+int	runner(int id, int bench, t_stack *a)
+{
+	t_stack	*b;
+	(void)bench;
+	(void)id;
+	int	ops;
+
+	b = malloc(sizeof(t_stack));
+	if (!b)
+		return (-1);
+	b = NULL;
+	index_set(a);
+	ops = alg_n_squared(&a, &b, bench);
+	free_stack(&b);
+	return (ops);
 }
 
 t_selector	*selector(t_stack *stack, t_parser	*parser)
