@@ -6,13 +6,13 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:15:32 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/26 17:47:06 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:21:21 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-//Trocar os dois primeiros nós da stack A.
+//performs the swap operation on the given stack.
 static void	op_swap(t_stack **stack)
 {
 	t_stack	*first;
@@ -31,16 +31,19 @@ static void	op_swap(t_stack **stack)
 	*stack = second;
 }
 
+//performs the swap operation on stack a.
 void	op_sa(t_stack **a)
 {
 	op_swap(a);
 }
 
+//performs the swap operation on stack b.
 void	op_sb(t_stack **b)
 {
 	op_swap(b);
 }
 
+//performs the swap operation on both stack a and stack b.
 void	op_ss(t_stack **a, t_stack **b)
 {
 	op_swap(a);
