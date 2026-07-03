@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   runner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/28 15:01:10 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:45:27 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "runner.h"
 // #include "../../includes/push_swap.h"
 
-void place_holder(void)
+void	place_holder(void)
 {
 	return ;
 }
@@ -68,7 +68,7 @@ int	rn_alg(t_stack *a, t_stack *b, int id)
 int	runner(t_selector *slc, t_stack *a, t_stack *b)
 {
 	t_stack	*b;
-	int	ops;
+	int		ops;
 
 	ops = 0;
 	if (slc->bench)

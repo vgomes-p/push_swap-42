@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   n_squared.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 18:57:44 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/29 18:17:19 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:49:00 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	alg_ns_lip(t_stack *stack)
 	int		low_idx;
 	int		low_idx_pos;
 	int		pos;
-	
+
 	temp = stack;
 	low_idx = temp->index;
 	low_idx_pos = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:09:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 11:58:53 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:43:26 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../stack/stack.h"
 
-typedef struct s_stack t_stack;
+typedef struct s_stack	t_stack;
 
 void	op_sa(t_stack **a);
 void	op_sb(t_stack **b);
