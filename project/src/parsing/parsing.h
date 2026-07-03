@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 17:22:02 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/30 12:48:12 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:06:52 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 typedef struct s_stack	t_stack;
 
-//flag: tipo de algoritmo a ser usado, bench: se o modo benchmark está ativo
-//bench: É uma flag que indica se o modo benchmark está ativo. Se bench for 1
 typedef struct s_parser
 {
 	char	*flag;

@@ -6,13 +6,13 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:40:44 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/18 16:37:33 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:04:31 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
-//verificar se a string é um número válido
+//checks if the given string represents a valid integer number.
 int	parsing_is_valid_number(char *str)
 {
 	if (str == NULL || *str == '\0')
@@ -30,7 +30,7 @@ int	parsing_is_valid_number(char *str)
 	return (1);
 }
 
-//procura na stack se o valor ja existe.
+//gets the long value of the string, returns 0 if invalid
 int	parsing_has_duplicate(t_stack *stack, int value)
 {
 	t_stack	*current;
@@ -45,7 +45,7 @@ int	parsing_has_duplicate(t_stack *stack, int value)
 	return (0);
 }
 
-// Verifica se um numero long cabe dentro de um int.
+//checks if the given long value is within the range of a 32-bit signed integer.
 int	parsing_is_int_range(long value)
 {
 	if (value < INT_MIN)
