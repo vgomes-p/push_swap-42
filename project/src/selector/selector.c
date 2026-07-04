@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/29 19:19:22 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/04 16:02:52 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	slc_filler(t_selector *slc, int id, double disorder)
 	char	*strategy;
 
 	strategy = NULL;
-	if (id == 0)
+	if (id == -1)
+		strategy = "Stack Sorted";
+	else if (id == 0)
 		strategy = "O(n²)";
 	else if (id == 1)
 		strategy = "O(n√n)";
@@ -68,7 +70,9 @@ t_selector	*selector(t_stack *stack, t_parser	*parser)
 	if (!b)
 		return (NULL);
 	b = NULL;
-	if (ft_strcmp(parser->flag, "--simple") == 0)
+	if (stack_is_sorted(stack))
+		slc_filler(slc, -1, disorder);
+	else if (ft_strcmp(parser->flag, "--simple") == 0)
 		slc_filler(slc, 0, disorder);
 	else if (ft_strcmp(parser->flag, "--medium") == 0)
 		slc_filler(slc, 1, disorder);
