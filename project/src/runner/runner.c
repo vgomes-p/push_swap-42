@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/04 16:04:41 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/07 18:45:10 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ int	runner(int id, int bench, t_stack *a, t_stack *b)
 	int	ops;
 
 	ops = 0;
-	if (bench == 1) /*remove it later init*/
-		bench = 2; /*remove it later end*/
+	// if (bench == 1) /*remove it later init*/
+	// 	bench = 2; /*remove it later end*/
 	if (id < 0)
 		return 0;
 	if (bench)
