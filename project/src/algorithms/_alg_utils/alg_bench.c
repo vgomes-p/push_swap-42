@@ -1,24 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   runner.h                                           :+:      :+:    :+:   */
+/*   alg_bench.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/28 14:45:43 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/06/29 19:13:12 by vigomes-         ###   ########.fr       */
+/*   Created: 2026/07/07 17:12:54 by vigomes-          #+#    #+#             */
+/*   Updated: 2026/07/07 17:13:06 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RUNNER_H
-# define RUNNER_H
-
-# include "../stack/stack.h"
-# include "../selector/selector.h"
-
-typedef struct s_stack		t_stack;
-typedef struct s_selector	t_selector;
-
-int	runner(int id, int bench, t_stack *a, t_stack *b);
-
-#endif
+#include "../algorithms.h"

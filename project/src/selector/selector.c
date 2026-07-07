@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/03 11:45:04 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/04 16:02:52 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void	slc_filler(t_selector *slc, int id, double disorder)
 	char	*strategy;
 
 	strategy = NULL;
-	if (id == 0)
+	if (id == -1)
+		strategy = "Stack Sorted";
+	else if (id == 0)
 		strategy = "O(n²)";
 	else if (id == 1)
 		strategy = "O(n√n)";
@@ -40,33 +42,37 @@ void	slc_adaptive(t_selector *slc, double disorder)
 		slc_filler(slc, 2, disorder);
 }
 
-int	runner(int id, int bench, t_stack *a)
+static t_selector	*slc_init(t_parser *parser)
 {
-	t_stack	*b;
-	(void)bench;
-	(void)id;
-	int	ops;
+	t_selector	*slc;
 
-	b = malloc(sizeof(t_stack));
-	if (!b)
-		return (-1);
-	b = NULL;
-	index_set(a);
-	ops = alg_n_squared(&a, &b, bench);
-	free_stack(&b);
-	return (ops);
+	slc = malloc(sizeof(t_selector));
+	if (!slc)
+		return (NULL);
+	if (parser->bench)
+		slc->bench = 1;
+	else
+		slc->bench = 0;
+	return (slc);
 }
 
 t_selector	*selector(t_stack *stack, t_parser	*parser)
 {
 	t_selector	*slc;
 	double		disorder;
+	t_stack		*b;
 
 	disorder = ds_global_calculator(stack);
-	slc = malloc(sizeof(t_selector));
+	slc = slc_init(parser);
 	if (!slc)
 		return (NULL);
-	if (ft_strcmp(parser->flag, "--simple") == 0)
+	b = malloc(sizeof(t_stack));
+	if (!b)
+		return (NULL);
+	b = NULL;
+	if (stack_is_sorted(stack))
+		slc_filler(slc, -1, disorder);
+	else if (ft_strcmp(parser->flag, "--simple") == 0)
 		slc_filler(slc, 0, disorder);
 	else if (ft_strcmp(parser->flag, "--medium") == 0)
 		slc_filler(slc, 1, disorder);
@@ -74,6 +80,6 @@ t_selector	*selector(t_stack *stack, t_parser	*parser)
 		slc_filler(slc, 2, disorder);
 	else if (ft_strcmp(parser->flag, "--adaptive") == 0)
 		slc_adaptive(slc, disorder);
-	slc->n_ops = runner(slc, stack);
+	slc->n_ops = runner(slc->id, slc->bench, stack, b);
 	return (slc);
 }
