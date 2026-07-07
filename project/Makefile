@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
 #    Updated: 2026/07/07 18:44:00 by vigomes-         ###   ########.fr        #
@@ -29,6 +29,7 @@ SLC_UDIR		=	$(SLC_DIR)_disorder_calculator/
 OPS_DIR			=	src/operations/
 ALG_DIR			=	src/algorithms/
 ALG_UDIR		=	$(ALG_DIR)_alg_utils/
+BENCHMARK_DIR	=	src/benchmark/
 
 MAIN_H			=	push_swap.h
 PARSING_H		=	$(PARSING_DIR)parsing.h
@@ -38,7 +39,8 @@ RN_H			=	$(RN_DIR)runner.h
 SLC_H			=	$(SLC_DIR)selector.h
 OPS_H			=	$(OPS_DIR)operations.h
 ALG_H			=	$(ALG_DIR)algorithms.h
-HEADERS			=	$(H_DIR)$(MAIN_H) $(PARSING_H) $(STACK_H) $(RN_H) $(SLC_H) $(INDEX_H) $(OPS_H) $(ALG_H)
+BENCHMARK_H		=	$(BENCHMARK_DIR)benchmark.h
+HEADERS			=	$(H_DIR)$(MAIN_H) $(PARSING_H) $(STACK_H) $(RN_H) $(SLC_H) $(INDEX_H) $(OPS_H) $(ALG_H) $(BENCHMARK_H)
 
 MAIN_SRC		=	main.c
 PARSING_SRCS	=	errors.c parse_args.c validate_args.c
@@ -61,13 +63,15 @@ ALL_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
 					$(addprefix $(OPS_DIR), $(OPS_SRCS)) \
 					$(addprefix $(ALG_DIR), $(ALG_SRCS)) \
 					$(addprefix $(ALG_UDIR), $(ALG_UTILS))
+					$(addprefix $(BENCHMARK_DIR), $(BENCHMARK_SRCS))
 
 CFLAGS			=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
 					-I $(PARSING_DIR) -I $(STACK_DIR) -I $(INDEX_DIR) \
-					-I $(RN_DIR) -I $(SLC_DIR) -I $(OPS_DIR) -I $(ALG_DIR)
+					-I $(RN_DIR) -I $(SLC_DIR) -I $(OPS_DIR) -I $(ALG_DIR) -I $(BENCHMARK_DIR)
 
 OBJ_DIR			=	build/
 OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o) $(ALG_UTILS:.c=.o))
+OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o) $(BENCHMARK_SRCS:.c=.o))
 
 ALL_FILES		=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
@@ -126,6 +130,7 @@ $(OBJ_DIR)%.o: %.c $(HEADERS)
 			@$(call update_progress)
 
 vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR) $(ALG_UDIR)
+vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR) $(BENCHMARK_DIR)
 
 norm:
 		@for file in $(ALL_FILES); do \

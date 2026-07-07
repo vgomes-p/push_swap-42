@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   n_root.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 15:17:20 by vigomes-          #+#    #+#             */
 /*   Updated: 2026/07/07 18:39:03 by vigomes-         ###   ########.fr       */

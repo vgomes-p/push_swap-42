@@ -6,12 +6,13 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:39:49 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/23 15:28:59 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:08:00 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsing.h"
 
+// Converts a string to a long integer, handling optional '+' or '-' signs.
 static long	parsing_atol(char *str)
 {
 	long	nbr;
@@ -33,6 +34,7 @@ static long	parsing_atol(char *str)
 	return (nbr * sign);
 }
 
+//Sets the strategy flag in the parser based on the argument provided.
 static int	parsing_set_strategy(char *arg, t_parser *parser, int *count)
 {
 	if (ft_strncmp(arg, "--simple", 9) == 0)
@@ -51,6 +53,7 @@ static int	parsing_set_strategy(char *arg, t_parser *parser, int *count)
 	return (1);
 }
 
+//Checks if the argument is a recognized flag and updates the parser.
 static int	parsing_is_flag(char *arg, t_parser *parser, int *strat, int *bench)
 {
 	if (ft_strncmp(arg, "--bench", 8) == 0)
@@ -64,6 +67,7 @@ static int	parsing_is_flag(char *arg, t_parser *parser, int *strat, int *bench)
 	return (parsing_set_strategy(arg, parser, strat));
 }
 
+// Parses a single argument, adding it to the stack if it's a valid number.
 static int	parsing_add_number(char *arg, t_stack **a)
 {
 	long	value;
@@ -83,6 +87,7 @@ static int	parsing_add_number(char *arg, t_stack **a)
 	return (1);
 }
 
+// Parses command-line arguments, populating the stack and parser structure.
 int	parsing_parse_args(int argc, char **argv, t_stack **a, t_parser *parser)
 {
 	int	i;

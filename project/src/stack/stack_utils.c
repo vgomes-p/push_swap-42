@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/21 14:29:17 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:54:10 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "stack.h"
 #include "../../includes/push_swap.h"
 
-//Retorna o último nó da pilha (ou NULL se a pilha estiver vazia).
+//Returns the last node of the stack.
 t_stack	*stack_last(t_stack *stack)
 {
 	t_stack	*current;
@@ -28,7 +28,7 @@ t_stack	*stack_last(t_stack *stack)
 	return (current);
 }
 
-//Retorna o número de nós na pilha.
+//Return the size of the stack (number of nodes).
 int	stack_size(t_stack *stack)
 {
 	t_stack	*current;
@@ -44,7 +44,7 @@ int	stack_size(t_stack *stack)
 	return (count_stack);
 }
 
-//Libera a memória alocada para a pilha e define o ponteiro da pilha como NULL.
+//frees all nodes in the stack and sets the stack pointer to NULL.
 void	free_stack(t_stack **stack)
 {
 	t_stack	*temp;

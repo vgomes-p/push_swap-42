@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   runner.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:43 by vigomes-          #+#    #+#             */
 /*   Updated: 2026/06/29 19:13:12 by vigomes-         ###   ########.fr       */
@@ -16,8 +16,8 @@
 # include "../stack/stack.h"
 # include "../selector/selector.h"
 
-typedef struct s_stack t_stack;
-typedef struct s_selector t_selector;
+typedef struct s_stack		t_stack;
+typedef struct s_selector	t_selector;
 
 int	runner(int id, int bench, t_stack *a, t_stack *b);
 

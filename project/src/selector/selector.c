@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   selector.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
 /*   Updated: 2026/07/04 16:02:52 by vigomes-         ###   ########.fr       */
