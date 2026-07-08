@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/07/03 11:54:10 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/08 18:06:22 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,35 @@ int	stack_size(t_stack *stack)
 }
 
 //frees all nodes in the stack and sets the stack pointer to NULL.
+// void	free_stack(t_stack **stack)
+// {
+// 	t_stack	*temp;
+
+// 	if (stack == NULL)
+// 		return ;
+// 	while (*stack != NULL)
+// 	{
+// 		temp = (*stack)->next;
+// 		free(*stack);
+// 		*stack = temp;
+// 	}
+// }
+
 void	free_stack(t_stack **stack)
 {
-	t_stack	*temp;
+	t_stack	*current;
+	t_stack	*next;
 
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 		return ;
-	while (*stack != NULL)
+	while ((*stack)->prev != NULL)
+		*stack = (*stack)->prev;
+	current = *stack;
+	while (current != NULL)
 	{
-		temp = (*stack)->next;
-		free(*stack);
-		*stack = temp;
+		next = current->next;
+		free(current);
+		current = next;
 	}
+	*stack = NULL;
 }
