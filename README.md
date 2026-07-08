@@ -10,6 +10,11 @@ A “Description” section that clearly presents the project, including its goa
 <!-- Instructions -->
 An “Instructions” section containing any relevant information about compilation, installation, and/or execution.
 
+## HOW TO TEST
+```bash
+shuf -i 0-9999 -n 500 > args.txt ; ./push_swap --bench $(cat args.txt) 2> bench.txt
+```
+
 ## ALGORITHMS CHOISES
 <!-- Algorithms selection explanation and justification -->
 A detailed explanation and justification of the algorithms selected for this project must also be included.

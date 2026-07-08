@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/04 16:02:52 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:40:39 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static t_selector	*slc_init(t_parser *parser)
 	return (slc);
 }
 
-t_selector	*selector(t_stack *stack, t_parser	*parser)
+int	selector(t_stack *stack, t_parser	*parser)
 {
 	t_selector	*slc;
 	double		disorder;
@@ -65,10 +65,10 @@ t_selector	*selector(t_stack *stack, t_parser	*parser)
 	disorder = ds_global_calculator(stack);
 	slc = slc_init(parser);
 	if (!slc)
-		return (NULL);
+		return (-1);
 	b = malloc(sizeof(t_stack));
 	if (!b)
-		return (NULL);
+		return (-1);
 	b = NULL;
 	if (stack_is_sorted(stack))
 		slc_filler(slc, -1, disorder);
@@ -80,6 +80,5 @@ t_selector	*selector(t_stack *stack, t_parser	*parser)
 		slc_filler(slc, 2, disorder);
 	else if (ft_strcmp(parser->flag, "--adaptive") == 0)
 		slc_adaptive(slc, disorder);
-	slc->n_ops = runner(slc->id, slc->bench, stack, b);
-	return (slc);
+	return (runner(slc, stack, b));
 }

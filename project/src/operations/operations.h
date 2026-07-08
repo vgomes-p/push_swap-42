@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:09:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 11:58:53 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:47:48 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../stack/stack.h"
 
-typedef struct s_stack t_stack;
+typedef struct s_stack	t_stack;
 
 void	op_sa(t_stack **a);
 void	op_sb(t_stack **b);

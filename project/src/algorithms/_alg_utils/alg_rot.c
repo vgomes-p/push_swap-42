@@ -6,72 +6,44 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 16:58:36 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/07 17:13:55 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:46:45 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../algorithms.h"
 
-int	alg_ra(t_stack **a, int temp, int bench)
+void	alg_ra(t_stack **a, int temp, int bench, t_count *count)
 {
-	int	ops;
-
-	ops = 0;
 	while (temp)
 	{
-		if (!bench)
-			ft_printf("ra\n");
-		op_ra(a);
-		ops++;
+		alg_exec_ra(a, bench, count);
 		temp--;
 	}
-	return (ops);
 }
 
-int	alg_rra(t_stack **a, int temp, int bench)
+void	alg_rra(t_stack **a, int temp, int bench, t_count *count)
 {
-	int	ops;
-
-	ops = 0;
 	while (temp)
 	{
-		if (!bench)
-			ft_printf("rra\n");
-		op_rra(a);
-		ops++;
+		alg_exec_rra(a, bench, count);
 		temp--;
 	}
-	return (ops);
 }
 
-int	alg_rb(t_stack **b, int temp, int bench)
+void	alg_rb(t_stack **b, int temp, int bench, t_count *count)
 {
-	int	ops;
-
-	ops = 0;
 	while (temp)
 	{
-		if (!bench)
-			ft_printf("rb\n");
-		op_rb(b);
-		ops++;
+		alg_exec_rb(b, bench, count);
 		temp--;
 	}
-	return (ops);
 }
 
-int	alg_rrb(t_stack **b, int temp, int bench)
+void	alg_rrb(t_stack **b, int temp, int bench, t_count *count)
 {
-	int	ops;
-
-	ops = 0;
 	while (temp)
 	{
-		if (!bench)
-			ft_printf("rrb\n");
-		op_rrb(b);
-		ops++;
+		alg_exec_rrb(b, bench, count);
 		temp--;
 	}
-	return (ops);
 }

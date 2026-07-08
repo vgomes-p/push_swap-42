@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 17:22:02 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/28 11:59:13 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:43:21 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../stack/stack.h"
 
-typedef struct s_stack t_stack;
+typedef struct s_stack	t_stack;
 
 //flag: tipo de algoritmo a ser usado, bench: se o modo benchmark está ativo
 //bench: É uma flag que indica se o modo benchmark está ativo. Se bench for 1
