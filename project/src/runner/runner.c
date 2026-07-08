@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/07 18:45:10 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 17:47:43 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	place_holder(void)
 	return ;
 }
 
-int	rn_wbench(t_stack *a, t_stack *b, int id, int bench)
+// int	rn_wbench(t_stack *a, t_stack *b, int id, int bench)
+int	rn_wbench(t_stack **a, t_stack **b, int id, int bench)
 {
 	int	ops;
 
@@ -26,17 +27,17 @@ int	rn_wbench(t_stack *a, t_stack *b, int id, int bench)
 	if (id == 0)
 	{
 		place_holder();
-		ops = alg_n_squared(&a, &b, bench);
+		ops = alg_n_squared(a, b, bench);
 	}
 	else if (id == 1)
 	{
 		place_holder();
-		ops = alg_n_root(&a, &b, bench);
+		ops = alg_n_root(a, b, bench);
 	}
 	else if (id == 2)
 	{
 		place_holder();
-		ops = alg_n_log(&a, &b, bench);
+		ops = alg_n_log(a, b, bench);
 	}
 	else
 	{
@@ -46,17 +47,18 @@ int	rn_wbench(t_stack *a, t_stack *b, int id, int bench)
 	return (ops);
 }
 
-int	rn_alg(t_stack *a, t_stack *b, int id, int bench)
+// int	rn_alg(t_stack *a, t_stack *b, int id, int bench)
+int	rn_alg(t_stack **a, t_stack **b, int id, int bench)
 {
 	int	ops;
 
 	ops = 0;
 	if (id == 0)
-		ops = alg_n_squared(&a, &b, bench);
+		ops = alg_n_squared(a, b, bench);
 	else if (id == 1)
-		ops = alg_n_root(&a, &b, bench);
+		ops = alg_n_root(a, b, bench);
 	else if (id == 2)
-		ops = alg_n_log(&a, &b, bench);
+		ops = alg_n_log(a, b, bench);
 	else
 	{
 		ops = -1;
@@ -65,7 +67,8 @@ int	rn_alg(t_stack *a, t_stack *b, int id, int bench)
 	return (ops);
 }
 
-int	runner(int id, int bench, t_stack *a, t_stack *b)
+// int	runner(int id, int bench, t_stack *a, t_stack *b)
+int	runner(int id, int bench, t_stack **a, t_stack **b)
 {
 	int	ops;
 
