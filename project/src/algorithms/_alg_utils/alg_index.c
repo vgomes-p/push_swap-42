@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/07 17:01:17 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/07 17:13:49 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:47:14 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	alg_lip(t_stack *stack)
 	int		low_idx;
 	int		low_idx_pos;
 	int		pos;
-	
+
 	temp = stack;
 	low_idx = temp->index;
 	low_idx_pos = 0;

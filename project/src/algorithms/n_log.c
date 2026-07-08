@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 18:57:19 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/04 15:44:27 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/08 19:46:23 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,58 +36,39 @@ static int	alg_rl_msb(t_stack *a)
 	return (msb);
 }
 
-static int alg_rl_radix(t_stack *a, t_stack *b, int bench)
+static int	alg_rl_init_rad(t_radix *rad, t_stack **a)
 {
-	int	msb;
-	int	size;
-	int	ori_size;
-	int	ops;
-	int	i;
-
-	ops = 0;
-	i = 0;
-	msb = alg_rl_msb(a);
-	ori_size = stack_size(a);
-	while (i <= msb)
-	{
-		size = ori_size;
-		while (size--)
-		{
-			if ((a->index >> i) & 1)
-			{
-				if (!bench)
-					ft_printf("ra\n");
-				op_ra(&a);
-				ops++;
-			}
-			else
-			{
-				if (!bench)
-					ft_printf("pb\n");
-				op_pb(&a, &b);
-				ops++;
-			}
-			if (stack_is_sorted(a))
-				break ;
-		}
-		while (b)
-		{
-			op_pa(&a, &b);
-			if (!bench)
-				ft_printf("pa\n");
-			ops++;
-		}
-		if (stack_is_sorted(a))
-			break ;
-		i++;
-	}
-	return (ops);
+	rad->i = 0;
+	rad->msb = alg_rl_msb(*a);
+	rad->ori_size = stack_size(*a);
+	return (0);
 }
 
-int	alg_n_log(t_stack **a, t_stack **b, int bench)
+void	alg_n_log(t_stack **a, t_stack **b, int bench, t_count *count)
 {
-	int	ops;
+	int		size;
+	t_radix	*rad;
 
-	ops = alg_rl_radix(*a, *b, bench);
-	return (ops);
+	rad = malloc(sizeof(t_radix));
+	if (!rad)
+		return ;
+	size = alg_rl_init_rad(rad, a);
+	while (rad->i++ <= rad->msb)
+	{
+		size = rad->ori_size;
+		while (size--)
+		{
+			if (((*a)->index >> rad->i) & 1)
+				alg_exec_ra(a, bench, count);
+			else
+				alg_exec_pb(a, b, bench, count);
+			if (stack_is_sorted(*a))
+				break ;
+		}
+		while (*b)
+			alg_exec_pa(a, b, bench, count);
+		if (stack_is_sorted(*a))
+			break ;
+	}
+	free(rad);
 }

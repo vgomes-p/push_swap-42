@@ -6,7 +6,7 @@
 #    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/07/07 18:44:00 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/07/08 18:47:39 by vigomes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ MAIN_DIR		=	src/main/
 PARSING_DIR		=	src/parsing/
 STACK_DIR		=	src/stack/
 INDEX_DIR		=	src/index/
+BENCH_DIR		=	src/benchmark/
 RN_DIR			=	src/runner/
 SLC_DIR			=	src/selector/
 SLC_UDIR		=	$(SLC_DIR)_disorder_calculator/
@@ -35,6 +36,7 @@ MAIN_H			=	push_swap.h
 PARSING_H		=	$(PARSING_DIR)parsing.h
 STACK_H			=	$(STACK_DIR)stack.h
 INDEX_H			=	$(INDEX_DIR)index.h
+BENCH_H			=	$(BENCH_DIR)benchmark.h
 RN_H			=	$(RN_DIR)runner.h
 SLC_H			=	$(SLC_DIR)selector.h
 OPS_H			=	$(OPS_DIR)operations.h
@@ -45,17 +47,19 @@ HEADERS			=	$(H_DIR)$(MAIN_H) $(PARSING_H) $(STACK_H) $(RN_H) $(SLC_H) $(INDEX_H
 MAIN_SRC		=	main.c
 PARSING_SRCS	=	errors.c parse_args.c validate_args.c
 STACK_SRCS		=	stack_check.c stack_create.c stack_utils.c
+BENCH_SRCS		=	benchmark.c benchmark_print.c
 INDEX_SRC		=	index.c
 RN_SRC			=	runner.c
 SLC_SRCS		=	selector.c
 SLC_UTILS		=	disorder_calculator.c
 OPS_SRCS		=	swap.c push.c rotate.c reverse_rotate.c
-ALG_SRCS		=	n_squared.c n_root.c n_log.c
-ALG_UTILS		=	alg_bench.c alg_index.c alg_rot.c
+ALG_SRCS		=	n_squared.c n_root.c n_log.c n_root_utils.c
+ALG_UTILS		=	alg_index.c alg_rot.c alg_exec_ops1.c alg_exec_ops2.c
 
 ALL_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
 					$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
 					$(addprefix $(STACK_DIR), $(STACK_SRCS)) \
+					$(addprefix $(BENCH_DIR), $(BENCH_SRCS)) \
 					$(addprefix $(INDEX_DIR), $(INDEX_SRC)) \
 					$(addprefix $(RN_DIR), $(RN_SRC)) \
 					$(addprefix $(SLC_DIR), $(SLC_SRCS)) \
@@ -66,12 +70,12 @@ ALL_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
 					$(addprefix $(BENCHMARK_DIR), $(BENCHMARK_SRCS))
 
 CFLAGS			=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \
-					-I $(PARSING_DIR) -I $(STACK_DIR) -I $(INDEX_DIR) \
-					-I $(RN_DIR) -I $(SLC_DIR) -I $(OPS_DIR) -I $(ALG_DIR) -I $(BENCHMARK_DIR)
+					-I $(PARSING_DIR) -I $(STACK_DIR) -I $(BENCH_DIR) \
+					-I $(INDEX_DIR) -I $(RN_DIR) -I $(SLC_DIR) \
+					-I $(OPS_DIR) -I $(ALG_DIR)
 
 OBJ_DIR			=	build/
-OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o) $(ALG_UTILS:.c=.o))
-OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o) $(BENCHMARK_SRCS:.c=.o))
+OBJS			=	$(addprefix $(OBJ_DIR), $(MAIN_SRC:.c=.o) $(PARSING_SRCS:.c=.o) $(STACK_SRCS:.c=.o) $(BENCH_SRCS:.c=.o) $(INDEX_SRC:.c=.o) $(RN_SRC:.c=.o) $(SLC_SRCS:.c=.o) $(SLC_UTILS:.c=.o) $(OPS_SRCS:.c=.o) $(ALG_SRCS:.c=.o) $(ALG_UTILS:.c=.o))
 
 ALL_FILES		=	$(LIBFT_DIR)*.c $(LIBFT_DIR)*.h $(ALL_SRCS)
 
@@ -129,8 +133,7 @@ $(OBJ_DIR)%.o: %.c $(HEADERS)
 			$(CC) $(CFLAGS) -c $< -o $@
 			@$(call update_progress)
 
-vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR) $(ALG_UDIR)
-vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR) $(BENCHMARK_DIR)
+vpath %.c $(MAIN_DIR) $(PARSING_DIR) $(STACK_DIR) $(BENCH_DIR) $(INDEX_DIR) $(RN_DIR) $(SLC_DIR) $(SLC_UDIR) $(OPS_DIR) $(ALG_DIR) $(ALG_UDIR)
 
 norm:
 		@for file in $(ALL_FILES); do \
