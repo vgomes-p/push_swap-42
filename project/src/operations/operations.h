@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:09:38 by danda-si          #+#    #+#             */
 /*   Updated: 2026/07/08 19:47:48 by vigomes-         ###   ########.fr       */

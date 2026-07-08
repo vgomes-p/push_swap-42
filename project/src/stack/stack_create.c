@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:30 by danda-si          #+#    #+#             */
-/*   Updated: 2026/06/21 14:29:13 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:56:03 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "stack.h"
 #include "../../includes/push_swap.h"
 
-// Cria e inicializa um novo nó da pilha (retorna NULL se falhar).
+// Creates a new stack node with the given value and returns a pointer to it.
 t_stack	*stack_new(int value)
 {
 	t_stack	*new_node;
@@ -28,7 +27,7 @@ t_stack	*stack_new(int value)
 	return (new_node);
 }
 
-//Adiciona um novo nó no (FINAL) da stack.
+//Adds a new node at the back of the stack.
 void	stack_add_back(t_stack **stack, t_stack *new_node)
 {
 	t_stack	*last;
@@ -45,7 +44,7 @@ void	stack_add_back(t_stack **stack, t_stack *new_node)
 	new_node->prev = last;
 }
 
-//Adiciona um novo nó no (INICIO) da stack.
+//Adds a new node at the front of the stack.
 void	stack_add_front(t_stack **stack, t_stack *new_node)
 {
 	if (!stack || !new_node)

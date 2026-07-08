@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   n_squared.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 18:57:44 by vigomes-          #+#    #+#             */
 /*   Updated: 2026/07/08 19:17:16 by vigomes-         ###   ########.fr       */

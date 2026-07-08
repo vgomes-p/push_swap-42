@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   runner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
 /*   Updated: 2026/07/08 19:23:39 by vigomes-         ###   ########.fr       */
