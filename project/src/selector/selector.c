@@ -6,25 +6,30 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/08 19:40:39 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 17:06:17 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	slc_filler(t_selector *slc, int id, double disorder)
+static void	slc_filler(t_selector *slc, int id, double disorder, char *flag)
 {
 	char	*strategy;
 
 	strategy = NULL;
 	if (id == -1)
 		strategy = "Stack Sorted";
+	else if (id == 3)
+	{
+		strategy = ft_strjoin(flag, " / Stack smaller than 5 | Forced O(n²)");
+		id = 0;
+	}
 	else if (id == 0)
-		strategy = "O(n²)";
+		strategy = ft_strjoin(flag, " / O(n²)");
 	else if (id == 1)
-		strategy = "O(n√n)";
+		strategy = ft_strjoin(flag, " / O(n√n)");
 	else if (id == 2)
-		strategy = "O(n log n)";
+		strategy = ft_strjoin(flag, " / O(n log n)");
 	else
 		strategy = "error:";
 	slc->id = id;
@@ -32,14 +37,16 @@ void	slc_filler(t_selector *slc, int id, double disorder)
 	slc->disorder = disorder;
 }
 
-void	slc_adaptive(t_selector *slc, double disorder)
+static void	slc_adaptive(t_selector *slc, double disorder, t_stack *stack)
 {
-	if (disorder < 0.2)
-		slc_filler(slc, 0, disorder);
+	if (stack_size(stack) <= 5)
+		slc_filler(slc, 3, disorder, "Adaptive");
+	else if (disorder < 0.2)
+		slc_filler(slc, 0, disorder, "Adaptive");
 	else if (disorder >= 0.2 && disorder < 0.5)
-		slc_filler(slc, 1, disorder);
+		slc_filler(slc, 1, disorder, "Adaptive");
 	else if (disorder >= 0.5)
-		slc_filler(slc, 2, disorder);
+		slc_filler(slc, 2, disorder, "Adaptive");
 }
 
 static t_selector	*slc_init(t_parser *parser)
@@ -71,14 +78,14 @@ int	selector(t_stack *stack, t_parser	*parser)
 		return (-1);
 	b = NULL;
 	if (stack_is_sorted(stack))
-		slc_filler(slc, -1, disorder);
+		slc_filler(slc, -1, disorder, "");
 	else if (ft_strcmp(parser->flag, "--simple") == 0)
-		slc_filler(slc, 0, disorder);
+		slc_filler(slc, 0, disorder, "Simple");
 	else if (ft_strcmp(parser->flag, "--medium") == 0)
-		slc_filler(slc, 1, disorder);
+		slc_filler(slc, 1, disorder, "Medium");
 	else if (ft_strcmp(parser->flag, "--complex") == 0)
-		slc_filler(slc, 2, disorder);
+		slc_filler(slc, 2, disorder, "Complex");
 	else if (ft_strcmp(parser->flag, "--adaptive") == 0)
-		slc_adaptive(slc, disorder);
+		slc_adaptive(slc, disorder, stack);
 	return (runner(slc, stack, b));
 }
