@@ -6,7 +6,7 @@
 #    By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 10:44:34 by vigomes-          #+#    #+#              #
-#    Updated: 2026/07/08 18:47:39 by vigomes-         ###   ########.fr        #
+#    Updated: 2026/07/09 16:25:48 by danda-si         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ BENCHMARK_H		=	$(BENCHMARK_DIR)benchmark.h
 HEADERS			=	$(H_DIR)$(MAIN_H) $(PARSING_H) $(STACK_H) $(RN_H) $(SLC_H) $(INDEX_H) $(OPS_H) $(ALG_H) $(BENCHMARK_H)
 
 MAIN_SRC		=	main.c
-PARSING_SRCS	=	errors.c parse_args.c validate_args.c
+PARSING_SRCS 	= errors.c parse_args.c validate_args.c parse_split.c
 STACK_SRCS		=	stack_check.c stack_create.c stack_utils.c
 BENCH_SRCS		=	benchmark.c benchmark_print.c
 INDEX_SRC		=	index.c
@@ -66,7 +66,7 @@ ALL_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_SRC)) \
 					$(addprefix $(SLC_UDIR), $(SLC_UTILS)) \
 					$(addprefix $(OPS_DIR), $(OPS_SRCS)) \
 					$(addprefix $(ALG_DIR), $(ALG_SRCS)) \
-					$(addprefix $(ALG_UDIR), $(ALG_UTILS))
+					$(addprefix $(ALG_UDIR), $(ALG_UTILS)) \
 					$(addprefix $(BENCHMARK_DIR), $(BENCHMARK_SRCS))
 
 CFLAGS			=	-Wall -Wextra -Werror -I $(H_DIR) -I $(LIBFT_DIR) \

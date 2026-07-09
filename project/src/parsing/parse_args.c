@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 16:39:49 by danda-si          #+#    #+#             */
-/*   Updated: 2026/07/03 12:08:00 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/09 16:23:51 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static int	parsing_is_flag(char *arg, t_parser *parser, int *strat, int *bench)
 }
 
 // Parses a single argument, adding it to the stack if it's a valid number.
-static int	parsing_add_number(char *arg, t_stack **a)
+int	parsing_add_number(char *arg, t_stack **a)
 {
 	long	value;
 	t_stack	*new_node;
@@ -105,7 +105,7 @@ int	parsing_parse_args(int argc, char **argv, t_stack **a, t_parser *parser)
 		flag_status = parsing_is_flag(argv[i], parser, &strategy_count,
 				&bench_count);
 		if (flag_status == -1 || (flag_status == 0
-				&& parsing_add_number(argv[i], a) == 0))
+				&& parsing_add_arg(argv[i], a) == 0))
 		{
 			parsing_print_error();
 			free_stack(a);
