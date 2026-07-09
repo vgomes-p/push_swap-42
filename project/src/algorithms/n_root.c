@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 15:17:20 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/08 19:45:52 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 16:30:03 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ static void	alg_nr_chunk(t_stack **a, t_stack **b, int bench, t_count *count)
 	cnk = alg_nr_init_cnk(a);
 	while (*a)
 	{
-		if (stack_is_sorted(*a))
-			break ;
+		if ((*a)->next && ((*a)->index == (*a)->next->index + 1))
+			alg_exec_sa(a, bench, count);
 		cnk->pos = alg_nr_find_chp(*a, cnk->start, cnk->end);
 		if (cnk->pos < 0)
 		{
@@ -76,6 +76,7 @@ static void	alg_nr_chunk(t_stack **a, t_stack **b, int bench, t_count *count)
 		if ((*b)->index <= cnk->mid)
 			alg_exec_rb(b, bench, count);
 	}
+	free(cnk);
 }
 
 void	alg_n_root(t_stack **a, t_stack **b, int bench, t_count *count)

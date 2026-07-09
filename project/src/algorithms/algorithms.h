@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 18:55:55 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/08 19:45:20 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 14:53:06 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 # include "../../includes/push_swap.h"
 
 typedef struct s_count	t_count;
+typedef struct s_stack	t_stack;
 
 typedef struct s_radix
 {
-	int	msb;
-	int	ori_size;
-	int	i;
+	t_stack	**a;
+	t_stack	**b;
+	t_count	*count;
+	int		msb;
+	int		ori_size;
+	int		i;
 }				t_radix;
 
 typedef struct s_chunk
