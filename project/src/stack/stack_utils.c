@@ -6,7 +6,7 @@
 /*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 12:39:38 by danda-si          #+#    #+#             */
-/*   Updated: 2026/07/03 11:54:10 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/09 18:21:48 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*temp;
 
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 		return ;
+	while ((*stack)->prev != NULL)
+		*stack = (*stack)->prev;
 	while (*stack != NULL)
 	{
 		temp = (*stack)->next;
@@ -58,3 +60,17 @@ void	free_stack(t_stack **stack)
 		*stack = temp;
 	}
 }
+
+// void	free_stack(t_stack **stack)
+// {
+// 	t_stack	*temp;
+
+// 	if (stack == NULL)
+// 		return ;
+// 	while (*stack != NULL)
+// 	{
+// 		temp = (*stack)->next;
+// 		free(*stack);
+// 		*stack = temp;
+// 	}
+// }
