@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   runner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/08 19:23:39 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 17:45:24 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	runner(t_selector *slc, t_stack *a, t_stack *b)
 		benchmark_print(slc, count);
 	ops = count->total;
 	free(count);
-	free(slc);
 	free_stack(&b);
 	return (ops);
 }

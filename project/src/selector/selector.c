@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   selector.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/09 17:06:17 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 17:46:08 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static void	slc_filler(t_selector *slc, int id, double disorder, char *flag)
 	slc->id = id;
 	slc->strategy = strategy;
 	slc->disorder = disorder;
+	free(strategy);
 }
 
 static void	slc_adaptive(t_selector *slc, double disorder, t_stack *stack)
@@ -63,20 +64,9 @@ static t_selector	*slc_init(t_parser *parser)
 	return (slc);
 }
 
-int	selector(t_stack *stack, t_parser	*parser)
+static void	slc_call_filler(t_stack *stack, t_parser *parser,
+							t_selector *slc, double disorder)
 {
-	t_selector	*slc;
-	double		disorder;
-	t_stack		*b;
-
-	disorder = ds_global_calculator(stack);
-	slc = slc_init(parser);
-	if (!slc)
-		return (-1);
-	b = malloc(sizeof(t_stack));
-	if (!b)
-		return (-1);
-	b = NULL;
 	if (stack_is_sorted(stack))
 		slc_filler(slc, -1, disorder, "");
 	else if (ft_strcmp(parser->flag, "--simple") == 0)
@@ -87,5 +77,26 @@ int	selector(t_stack *stack, t_parser	*parser)
 		slc_filler(slc, 2, disorder, "Complex");
 	else if (ft_strcmp(parser->flag, "--adaptive") == 0)
 		slc_adaptive(slc, disorder, stack);
-	return (runner(slc, stack, b));
+}
+
+int	selector(t_stack *stack, t_parser	*parser)
+{
+	t_selector	*slc;
+	double		disorder;
+	t_stack		*b;
+	int			ret;
+
+	disorder = ds_global_calculator(stack);
+	slc = slc_init(parser);
+	ret = 0;
+	if (!slc)
+		return (-1);
+	b = malloc(sizeof(t_stack));
+	if (!b)
+		return (-1);
+	b = NULL;
+	slc_call_filler(stack, parser, slc, disorder);
+	ret = runner(slc, stack, b);
+	free(slc);
+	return (ret);
 }
