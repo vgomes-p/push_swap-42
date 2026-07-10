@@ -163,13 +163,3 @@ This is an additional rule we made because no other algorithm is as efficient as
 [`Acelera 42`](https://rodsmade.notion.site/Acelera-Push_swap-083ab844f9b44456a176e4e4c875bc73)
 [`Trello | Kanban`](https://trello.com/b/ah0lgJDc/pushswap)
 [`Miro`](https://miro.com/app/board/uXjVHNAdLmE=/?share_link_id=47446866977)
-[`AI`](temp.temp)
-
-### AI prompts
-#### Prompt uses example
-[`Example from danda-si`](https://github.com/danieldsc123)
-```txt
-```
-[`Example from vigomes-`](https://github.com/vgomes-p)
-```txt
-```
