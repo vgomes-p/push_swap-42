@@ -167,9 +167,9 @@ This is an additional rule we made because no other algorithm is as efficient as
 
 ### AI prompts
 #### Prompt uses example
-`Example from [danda-si](https://github.com/danieldsc123)`
+[`Example from danda-si`](https://github.com/danieldsc123)
 ```txt
 ```
-`Example from [vigomes-](https://github.com/vgomes-p)`
+[`Example from vigomes-`](https://github.com/vgomes-p)
 ```txt
 ```
