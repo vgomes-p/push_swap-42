@@ -1,23 +1,24 @@
 This project has been created as part
 of the 42 curriculum by danda-si, vigomes-
 # Push_swap (because Swap_push doesn’t feel as natural)
+This project involves sorting data on a stack, with a limited set of instructions, and using the smallest number of moves. To succeed, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
 
 <!-- Description -->
 ## DESCRIPTION
 The `push_swap` is a program than aims to sort a stack of intergers ascending using as minimal number of operations as possible (program efficiency is the very first challange from this project).
-### Implementation
+### 1. Implementations
 The implementation follows a hybrid approach, users can chose which level of sorting they want to user (`simple`, `medium` or `complex`) or the program will select which algorithm is more appropriated according with the stack size and disorder level.
 
-### Algorithms
+### 2. Algorithms
 The program relies on three sorting algorithms groups, **O(n²)**, **O(n√n)** and **O(n log n)**, which will be called according with the stack disorder (_< 20%_, _< 50%_ and _> 50%_).
 
-### Selector
+### 3. Selector
 Indeed, there is a forth algorithm, that is the `ds_global_calculator()`, which is called by the `selector()` to determine which algorithm will sort the stack. The _selector system_ will also check the stack size to determine is a algorithm should be forced or not.
 
-### Benchmark
+### 4. Benchmark
 The _benchmark system_ is responsible to count how many time each operation were called by the algorithms. If called during the execution, it will display the summary of operations and how much operations were made to sort the stack.
 
-### Flags
+### 5. Flags
 `--bench`: Shows how many operations were made, which strategy were chosen and how many calls each operation had
 
 `--simple`: Forces to run the algorithm O(n²)
@@ -28,8 +29,14 @@ The _benchmark system_ is responsible to count how many time each operation were
 
 `--adaptive`:  Will chose the algorithm according with the stack disorder level
 
-### Return
+### 6. Return
 We decided to return how many operations `push_swap` made. If the program returns **_-1_**, it means that the program failed at some point.
+
+## Requirements
+
+- CC or Clang compiler
+- GNU Make
+- Linux or any POSIX-compliant operating system
 
 ## INTRODUCTION | How to use?
 ### Simple Usage
@@ -57,11 +64,11 @@ echo $?
 you can run the flags `--simple`, `--medium`, `--complex`, `--adaptive` and `--bench`
 `*Here are some other test you can make:*`
 ```bash
-shuf -i 0-9999 -n 500 > args.txt ; ./push_swap --bench $(cat args.txt) 2> bench.txt | cat bench.txt
+shuf -i 0-9999 -n 500 > args.txt ; ./push_swap --bench $(cat args.txt) 2> bench.txt && cat bench.txt
 ```
 
 ```bash
-ARG="4 67 3 87 23"; ./push_swap --bench --adaptive $ARG 2> bench.txt | cat bench.txt
+ARG="4 67 3 87 23"; ./push_swap --bench --adaptive $ARG 2> bench.txt & cat bench.txt
 ```
 
 ```bash
@@ -90,7 +97,7 @@ nano ~/.zshrc
 ```
 Pass the following code block into you shell enviroment setting file
 ```bash
-alias push_swapVisualizer="git clone https://github.com/o-reo/push_swap_visualizer.git psv && cd psv && mkdir build && cd build && cmake .. && make && ./bin/visualizer"
+alias push_swapVisualizer="git clone https://github.com/o-reo/push_swap_visualizer.git psv & cd psv & mkdir build & cd build && cmake .. & make & ./bin/visualizer"
 alias push_swapVisualizerClean="rm -rf psv
 ```
 Update the shell
@@ -130,9 +137,7 @@ The _Radix Sort_ sorts elements by examining their binary representation one bit
 Adaptive uses the `ds_global_calculator()` to chose which of the sorting algorithm will sort the stack by following the fixed rule:
 
 - Disorder smaller than 20% uses **O(n²) | Own Sort**
-
 - Disorder bigger than 20% and smaller than 50% uses **O(n√n) | Chunk Sort**
-
 - Disorder bigger than 50% uses **O(n log n) | Radix Sort**
 
 But _if the stack size is smaller or equal to 5, it will force to run **O(n²)**_.
