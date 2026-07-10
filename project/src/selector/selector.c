@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/09 17:46:08 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 21:17:33 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	slc_filler(t_selector *slc, int id, double disorder, char *flag)
 	slc->id = id;
 	slc->strategy = strategy;
 	slc->disorder = disorder;
-	free(strategy);
 }
 
 static void	slc_adaptive(t_selector *slc, double disorder, t_stack *stack)
@@ -88,15 +87,15 @@ int	selector(t_stack *stack, t_parser	*parser)
 
 	disorder = ds_global_calculator(stack);
 	slc = slc_init(parser);
-	ret = 0;
 	if (!slc)
 		return (-1);
-	b = malloc(sizeof(t_stack));
-	if (!b)
-		return (-1);
+	ret = 0;
 	b = NULL;
 	slc_call_filler(stack, parser, slc, disorder);
 	ret = runner(slc, stack, b);
+	free_stack(&b);
+	if (slc->strategy)
+		free(slc->strategy);
 	free(slc);
 	return (ret);
 }

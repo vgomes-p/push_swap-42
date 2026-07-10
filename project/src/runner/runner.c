@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/09 17:45:24 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/09 21:14:06 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ int	runner(t_selector *slc, t_stack *a, t_stack *b)
 		benchmark_print(slc, count);
 	ops = count->total;
 	free(count);
-	free_stack(&b);
 	return (ops);
 }
