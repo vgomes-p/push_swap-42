@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   runner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/09 21:14:06 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/10 13:05:37 by danda-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	runner(t_selector *slc, t_stack *a, t_stack *b)
 	count = malloc(sizeof(t_count));
 	if (!count)
 		return (-1);
-	ops = 0;
+	benchmark_init(count);
 	rn_alg(a, b, slc, count);
 	if (slc->bench)
 		benchmark_print(slc, count);
@@ -42,3 +42,20 @@ int	runner(t_selector *slc, t_stack *a, t_stack *b)
 	free(count);
 	return (ops);
 }
+
+// int	runner(t_selector *slc, t_stack *a, t_stack *b)
+// {
+// 	int		ops;
+// 	t_count	*count;
+
+// 	count = malloc(sizeof(t_count));
+// 	if (!count)
+// 		return (-1);
+// 	ops = 0;
+// 	rn_alg(a, b, slc, count);
+// 	if (slc->bench)
+// 		benchmark_print(slc, count);
+// 	ops = count->total;
+// 	free(count);
+// 	return (ops);
+// }
