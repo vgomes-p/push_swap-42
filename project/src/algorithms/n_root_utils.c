@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 15:17:20 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/08 18:39:25 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/10 20:30:11 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	alg_nr_find_chp(t_stack *a, int start, int end)
 	return (-1);
 }
 
-void	alg_nr_chr(t_stack **a, int pos, int bench, t_count *count)
+void	alg_nr_chr(t_stack **a, int pos, t_selector *slc, t_count *count)
 {
 	int	size;
 	int	ops;
@@ -46,8 +46,8 @@ void	alg_nr_chr(t_stack **a, int pos, int bench, t_count *count)
 	size = stack_size(*a);
 	if (pos <= size / 2)
 		while (ops++ < pos)
-			alg_exec_ra(a, bench, count);
+			alg_exec_ra(a, slc, count);
 	else
 		while (ops++ < (size - pos))
-			alg_exec_rra(a, bench, count);
+			alg_exec_rra(a, slc, count);
 }

@@ -1,5 +1,6 @@
 This project has been created as part
 of the 42 curriculum by danda-si, vigomes-
+![push_swap-cover](src/cover-push_swap.png)
 # Push_swap (because Swap_push doesn’t feel as natural)
 This project involves sorting data on a stack, with a limited set of instructions, and using the smallest number of moves. To succeed, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
 
@@ -31,6 +32,8 @@ The _benchmark system_ is responsible to count how many time each operation were
 
 ### 6. Return
 We decided to return how many operations `push_swap` made. If the program returns **_-1_**, it means that the program failed at some point.
+
+![push_swap-approve_at_intra](src/approved.png)
 
 ## Requirements
 

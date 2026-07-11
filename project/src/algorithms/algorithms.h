@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 18:55:55 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/09 18:58:15 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/10 20:55:38 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include "../../includes/push_swap.h"
 
-typedef struct s_count	t_count;
-typedef struct s_stack	t_stack;
+typedef struct s_count		t_count;
+typedef struct s_stack		t_stack;
+typedef struct s_selector	t_selector;
 
 typedef struct s_radix
 {
@@ -37,32 +38,33 @@ typedef struct s_chunk
 	int	pos;
 }				t_chunk;
 
-void	alg_exec_pa(t_stack **a, t_stack **b, int bench, t_count *count);
-void	alg_exec_pb(t_stack **a, t_stack **b, int bench, t_count *count);
-void	alg_exec_rra(t_stack **a, int bench, t_count *count);
-void	alg_exec_rrb(t_stack **b, int bench, t_count *count);
-void	alg_exec_rrr(t_stack **a, t_stack **b, int bench, t_count *count);
-void	alg_exec_ra(t_stack **a, int bench, t_count *count);
-void	alg_exec_rb(t_stack **b, int bench, t_count *count);
-void	alg_exec_rr(t_stack **a, t_stack **b, int bench, t_count *count);
-void	alg_exec_sa(t_stack **a, int bench, t_count *count);
-void	alg_exec_sb(t_stack **b, int bench, t_count *count);
-void	alg_exec_ss(t_stack **a, t_stack **b, int bench, t_count *count);
+void	alg_exec_pa(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_pb(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_rra(t_stack **a, t_selector *slc, t_count *count);
+void	alg_exec_rrb(t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_rrr(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_ra(t_stack **a, t_selector *slc, t_count *count);
+void	alg_exec_rb(t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_rr(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_sa(t_stack **a, t_selector *slc, t_count *count);
+void	alg_exec_sb(t_stack **b, t_selector *slc, t_count *count);
+void	alg_exec_ss(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
 
-void	alg_ra(t_stack **a, int temp, int bench, t_count *count);
-void	alg_rra(t_stack **a, int temp, int bench, t_count *count);
-void	alg_rb(t_stack **b, int temp, int bench, t_count *count);
-void	alg_rrb(t_stack **b, int temp, int bench, t_count *count);
+void	alg_ra(t_stack **a, int temp, t_selector *slc, t_count *count);
+void	alg_rra(t_stack **a, int temp, t_selector *slc, t_count *count);
+void	alg_rb(t_stack **b, int temp, t_selector *slc, t_count *count);
+void	alg_rrb(t_stack **b, int temp, t_selector *slc, t_count *count);
 
 int		alg_bip(t_stack *stack);
 int		alg_lip(t_stack *stack);
 
 int		alg_nr_sqrt(int nbr);
 int		alg_nr_find_chp(t_stack *a, int start, int end);
-void	alg_nr_chr(t_stack **a, int pos, int bench, t_count *count);
+void	alg_nr_chr(t_stack **a, int pos, t_selector *slc, t_count *count);
 
-void	alg_n_squared(t_stack **a, t_stack **b, int bench, t_count *count);
-void	alg_n_log(t_stack **a, t_stack **b, int bench, t_count *count);
-void	alg_n_root(t_stack **a, t_stack **b, int bench, t_count *count);
+void	alg_n_squared(t_stack **a, t_stack **b,
+			t_selector *slc, t_count *count);
+void	alg_n_log(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
+void	alg_n_root(t_stack **a, t_stack **b, t_selector *slc, t_count *count);
 
 #endif

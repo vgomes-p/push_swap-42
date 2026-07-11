@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   runner.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danda-si <danda-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/28 14:45:32 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/10 13:05:37 by danda-si         ###   ########.fr       */
+/*   Updated: 2026/07/10 20:42:30 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static void	rn_alg(t_stack *a, t_stack *b, t_selector *slc, t_count *count)
 {
 	if (slc->id == 0)
-		alg_n_squared(&a, &b, slc->bench, count);
+		alg_n_squared(&a, &b, slc, count);
 	else if (slc->id == 1)
-		alg_n_root(&a, &b, slc->bench, count);
+		alg_n_root(&a, &b, slc, count);
 	else if (slc->id == 2)
-		alg_n_log(&a, &b, slc->bench, count);
+		alg_n_log(&a, &b, slc, count);
 	else if (slc->id == -1)
 		return ;
 	else
@@ -42,20 +42,3 @@ int	runner(t_selector *slc, t_stack *a, t_stack *b)
 	free(count);
 	return (ops);
 }
-
-// int	runner(t_selector *slc, t_stack *a, t_stack *b)
-// {
-// 	int		ops;
-// 	t_count	*count;
-
-// 	count = malloc(sizeof(t_count));
-// 	if (!count)
-// 		return (-1);
-// 	ops = 0;
-// 	rn_alg(a, b, slc, count);
-// 	if (slc->bench)
-// 		benchmark_print(slc, count);
-// 	ops = count->total;
-// 	free(count);
-// 	return (ops);
-// }

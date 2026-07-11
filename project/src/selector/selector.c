@@ -6,7 +6,7 @@
 /*   By: vigomes- <vigomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:37:28 by vigomes-          #+#    #+#             */
-/*   Updated: 2026/07/10 19:48:20 by vigomes-         ###   ########.fr       */
+/*   Updated: 2026/07/11 14:22:16 by vigomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	slc_filler(t_selector *slc, int id, double disorder, char *flag)
 
 	strategy = NULL;
 	if (id == -1)
-		strategy = "Stack Sorted";
+		strategy = ft_strdup("Stack Sorted");
 	else if (id == 3)
 	{
 		strategy = ft_strjoin(flag, " / Stack smaller than 5 | Forced O(n²)");
