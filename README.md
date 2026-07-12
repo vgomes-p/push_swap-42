@@ -122,7 +122,7 @@ make fclean
 
 ## ALGORITHMS CHOISES
 <!-- Algorithms selection explanation and justification -->
-A detailed explanation and justification of the algorithms selected for this project must also be included.
+
 ### O(n²) | Own Sort
 For `O(n²)` I've chosen to try to implement a sort algorithm by myself. The algorithm search for the lower index in the stack A, rotate it to the top of the stack and then push it to the stack B. After pushing everything, B will already have the stack sorted, but descending, so the algorithm start to push everything to A again. But if the stack A get sorted during pushing to B, it will stop pushing to B and start push to A. If the top integer of A minus one is egual to the next value, it will swap both
 ```c
